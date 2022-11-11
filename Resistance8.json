@@ -1,0 +1,62 @@
+modeleight = [
+ {
+  "number": "Class 71",
+  "ahm": "4k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 72",
+  "ahm": "4.7k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 73",
+  "ahm": "4.7k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 74",
+  "ahm": "4.7k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 75",
+  "ahm": "4.7k",
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 76",
+  "ahm": "5k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 77",
+  "ahm": "5.1k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 78",
+  "ahm": "5.6k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 79",
+  "ahm": "5.6k",
+  "capacity": 1,
+  "error": 5
+ },
+ {
+  "number": "Class 80",
+  "ahm": "5.6k",
+  "capacity": 2,
+  "error": 5
+ }
+]

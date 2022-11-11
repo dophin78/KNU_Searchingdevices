@@ -1,0 +1,46 @@
+modelfourteen = [
+ {
+  "number": "Classs 1",
+  "ahm": 100
+ },
+ {
+  "number": "Classs 2",
+  "ahm": "1k"
+ },
+ {
+  "number": "Classs 3",
+  "ahm": "3k"
+ },
+ {
+  "number": "Classs 4",
+  "ahm": "5k"
+ },
+ {
+  "number": "Classs 5",
+  "ahm": "10k"
+ },
+ {
+  "number": "Classs 6",
+  "ahm": "20k"
+ },
+ {
+  "number": "Classs 7",
+  "ahm": "50k"
+ },
+ {
+  "number": "Classs 8",
+  "ahm": "100k"
+ },
+ {
+  "number": "Classs 9",
+  "ahm": "500k"
+ },
+ {
+  "number": "Classs 10",
+  "ahm": "1M"
+ },
+ {
+  "number": "Classs 11",
+  "ahm": "2M"
+ }
+]

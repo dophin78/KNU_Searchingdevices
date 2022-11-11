@@ -1,0 +1,62 @@
+modeltwo = [
+ {
+  "number": "Class 11",
+  "ahm": 15,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 12",
+  "ahm": 20,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 13",
+  "ahm": 22,
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 14",
+  "ahm": 25,
+  "capacity": 0.5,
+  "error": 10
+ },
+ {
+  "number": "Class 15",
+  "ahm": 27,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 16",
+  "ahm": 27,
+  "capacity": 1,
+  "error": 5
+ },
+ {
+  "number": "Class 17",
+  "ahm": 33,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 18",
+  "ahm": 39,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 19",
+  "ahm": 47,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 20",
+  "ahm": 47,
+  "capacity": 1,
+  "error": 5
+ }
+]

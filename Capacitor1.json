@@ -1,0 +1,62 @@
+modelfifteen = [
+ {
+  "number": "Classss 1",
+  "farad": "5p",
+  "type": "ceramic",
+  "pressure": 0
+ },
+ {
+  "number": "Classss 2",
+  "farad": "10p",
+  "type": "ceramic",
+  "pressure": 0
+ },
+ {
+  "number": "Classss 3",
+  "farad": "22p",
+  "type": "ceramic",
+  "pressure": 0
+ },
+ {
+  "number": "Classss 4",
+  "farad": "100p",
+  "type": "ceramic",
+  "pressure": 0
+ },
+ {
+  "number": "Classss 5",
+  "farad": "0.00047u",
+  "type": "ceramic",
+  "pressure": 0
+ },
+ {
+  "number": "Classss 6",
+  "farad": "0.001u",
+  "type": "ceramic",
+  "pressure": 0
+ },
+ {
+  "number": "Classss 7",
+  "farad": "0.001u",
+  "type": "film",
+  "pressure": 100
+ },
+ {
+  "number": "Classss 8",
+  "farad": "0.0022u",
+  "type": "film",
+  "pressure": 100
+ },
+ {
+  "number": "Classss 9",
+  "farad": "0.0033u",
+  "type": "film",
+  "pressure": 100
+ },
+ {
+  "number": "Classss 10",
+  "farad": "0.0047u",
+  "type": "ceramic",
+  "pressure": 0
+ }
+]

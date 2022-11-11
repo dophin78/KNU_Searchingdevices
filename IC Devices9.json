@@ -1,0 +1,38 @@
+modeltwentyeight = [
+ {
+  "number": "Clas 81",
+  "ic": "SGS10N60RUF",
+  "type": "IGBT",
+  "pin": "pin\/SGS10N60RUF.jpg"
+ },
+ {
+  "number": "Clas 82",
+  "ic": "TL074",
+  "type": "Amplifiers",
+  "pin": "pin\/TL074.jpg"
+ },
+ {
+  "number": "Clas 83",
+  "ic": "TLP559",
+  "type": "Transistor",
+  "pin": "pin\/TLP559.jpg"
+ },
+ {
+  "number": "Clas 84",
+  "ic": "TYN610",
+  "type": "SCR",
+  "pin": "pin\/TYN610.jpg"
+ },
+ {
+  "number": "Clas 85",
+  "ic": "UA741",
+  "type": "Amplifiers",
+  "pin": "pin\/UA741.jpg"
+ },
+ {
+  "number": "Clas 86",
+  "ic": "WY-19PB",
+  "type": "Transformer",
+  "pin": "pin\/WY-19PB.jpg"
+ }
+]

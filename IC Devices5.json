@@ -1,0 +1,62 @@
+modeltwentyfour = [
+ {
+  "number": "Clas 41",
+  "ic": "78L05",
+  "type": "Regulators",
+  "pin": "pin\/78L05.jpg"
+ },
+ {
+  "number": "Clas 42",
+  "ic": "78L09",
+  "type": "Regulators",
+  "pin": "pin\/78L09.jpg"
+ },
+ {
+  "number": "Clas 43",
+  "ic": "78L12",
+  "type": "Regulators",
+  "pin": "pin\/78L12.jpg"
+ },
+ {
+  "number": "Clas 44",
+  "ic": "78L15",
+  "type": "Regulators",
+  "pin": "pin\/78L15.jpg"
+ },
+ {
+  "number": "Clas 45",
+  "ic": "C1815",
+  "type": "Transistor",
+  "pin": "pin\/C1815.jpg"
+ },
+ {
+  "number": "Clas 46",
+  "ic": "CD4049",
+  "type": "Converters",
+  "pin": "pin\/CD4049.jpg"
+ },
+ {
+  "number": "Clas 47",
+  "ic": "CD4050",
+  "type": "Converters",
+  "pin": "pin\/CD4050.jpg"
+ },
+ {
+  "number": "Clas 48",
+  "ic": "CD4073",
+  "type": "AND Gates",
+  "pin": "pin\/CD4073.jpg"
+ },
+ {
+  "number": "Clas 49",
+  "ic": "HA17358",
+  "type": "Amplifiers",
+  "pin": "pin\/HA17358.jpg"
+ },
+ {
+  "number": "Clas 50",
+  "ic": "HEF4081",
+  "type": "AND Gates",
+  "pin": "pin\/HEF4081.jpg"
+ }
+]

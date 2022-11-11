@@ -1,0 +1,62 @@
+modeltwenty = [
+ {
+  "number": "Clas 1",
+  "ic": "1N4148",
+  "type": "Diode",
+  "pin": "pin\/1N4148.jpg"
+ },
+ {
+  "number": "Clas 2",
+  "ic": "1N4728",
+  "type": "Diode",
+  "pin": "pin\/1N47(28-71).jpg"
+ },
+ {
+  "number": "Clas 3",
+  "ic": "1N4733",
+  "type": "Diode",
+  "pin": "pin\/1N47(28-71).jpg"
+ },
+ {
+  "number": "Clas 4",
+  "ic": "1N4739",
+  "type": "Diode",
+  "pin": "pin\/1N47(28-71).jpg"
+ },
+ {
+  "number": "Clas 5",
+  "ic": "1N4742",
+  "type": "Diode",
+  "pin": "pin\/1N47(28-71).jpg"
+ },
+ {
+  "number": "Clas 6",
+  "ic": "1N4745",
+  "type": "Diode",
+  "pin": "pin\/1N47(28-71).jpg"
+ },
+ {
+  "number": "Clas 7",
+  "ic": "2N2222",
+  "type": "Transistor",
+  "pin": "pin\/2N2222.jpg"
+ },
+ {
+  "number": "Clas 8",
+  "ic": "2N3904",
+  "type": "Transistor",
+  "pin": "pin\/2N3904.jpg"
+ },
+ {
+  "number": "Clas 9",
+  "ic": "2N6028",
+  "type": "Transistor",
+  "pin": "pin\/2N6028.jpg"
+ },
+ {
+  "number": "Clas 10",
+  "ic": "2N7000",
+  "type": "Transistor",
+  "pin": "pin\/2N7000.jpg"
+ }
+]

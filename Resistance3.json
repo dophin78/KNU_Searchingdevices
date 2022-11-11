@@ -1,0 +1,62 @@
+modelthree = [
+ {
+  "number": "Class 21",
+  "ahm": 51,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 22",
+  "ahm": 51,
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 23",
+  "ahm": 56,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 24",
+  "ahm": 68,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 25",
+  "ahm": 68,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 26",
+  "ahm": 68,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 27",
+  "ahm": 82,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 28",
+  "ahm": 100,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 29",
+  "ahm": 100,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 30",
+  "ahm": 100,
+  "capacity": 1,
+  "error": 5
+ }
+]

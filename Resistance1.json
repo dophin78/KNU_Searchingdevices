@@ -1,0 +1,62 @@
+modelone = [
+ {
+  "number": "Class 1",
+  "ahm": 1,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 2",
+  "ahm": 1,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 3",
+  "ahm": 4.7,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 4",
+  "ahm": 4.7,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 5",
+  "ahm": 5.6,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 6",
+  "ahm": 10,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 7",
+  "ahm": 10,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 8",
+  "ahm": 10,
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 9",
+  "ahm": 12,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 10",
+  "ahm": 15,
+  "capacity": 0.25,
+  "error": 1
+ }
+]

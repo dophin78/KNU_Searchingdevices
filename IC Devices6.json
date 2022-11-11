@@ -1,0 +1,62 @@
+modeltwentyfive = [
+ {
+  "number": "Clas 51",
+  "ic": "HPI5FDR4",
+  "type": "Photodiode",
+  "pin": "pin\/HPI5FDR4.jpg"
+ },
+ {
+  "number": "Clas 52",
+  "ic": "HR702NH",
+  "type": "Converters",
+  "pin": "pin\/HR702NH.jpg"
+ },
+ {
+  "number": "Clas 53",
+  "ic": "IL324",
+  "type": "Amplifiers",
+  "pin": "pin\/IL324.jpg"
+ },
+ {
+  "number": "Clas 54",
+  "ic": "IL393",
+  "type": "Comparators",
+  "pin": "pin\/IL393.jpg"
+ },
+ {
+  "number": "Clas 55",
+  "ic": "IN4002",
+  "type": "Rectifier",
+  "pin": "pin\/IN400(1-7).jpg"
+ },
+ {
+  "number": "Clas 56",
+  "ic": "IN4004",
+  "type": "Rectifier",
+  "pin": "pin\/IN400(1-7).jpg"
+ },
+ {
+  "number": "Clas 57",
+  "ic": "IN4007",
+  "type": "Rectifier",
+  "pin": "pin\/IN400(1-7).jpg"
+ },
+ {
+  "number": "Clas 58",
+  "ic": "IRF640",
+  "type": "MOSFET",
+  "pin": "pin\/IRF640.jpg"
+ },
+ {
+  "number": "Clas 59",
+  "ic": "ISS106",
+  "type": "Diode",
+  "pin": "pin\/ISS106.jpg"
+ },
+ {
+  "number": "Clas 60",
+  "ic": "KA393",
+  "type": "Comparators",
+  "pin": "pin\/KA393.jpg"
+ }
+]

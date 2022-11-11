@@ -1,0 +1,62 @@
+modelten = [
+ {
+  "number": "Class 91",
+  "ahm": "22k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 92",
+  "ahm": "30k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 93",
+  "ahm": "33k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 94",
+  "ahm": "33k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 95",
+  "ahm": "36k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 96",
+  "ahm": "39k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 97",
+  "ahm": "39k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 98",
+  "ahm": "40k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 99",
+  "ahm": "47k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 100",
+  "ahm": "47k",
+  "capacity": 1,
+  "error": 5
+ }
+]

@@ -1,0 +1,62 @@
+modelsix = [
+ {
+  "number": "Class 51",
+  "ahm": "1k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 52",
+  "ahm": "1.3k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 53",
+  "ahm": "1.5k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 54",
+  "ahm": "1.5k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 55",
+  "ahm": "1.5k",
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 56",
+  "ahm": "2k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 57",
+  "ahm": "2k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 58",
+  "ahm": "2.2k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 59",
+  "ahm": "2.2k",
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 60",
+  "ahm": "2.4k",
+  "capacity": 0.25,
+  "error": 5
+ }
+]

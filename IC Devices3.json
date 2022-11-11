@@ -1,0 +1,62 @@
+modeltwentytwo = [
+ {
+  "number": "Clas 21",
+  "ic": "74LS27",
+  "type": "NOR Gates",
+  "pin": "pin\/74LS27.jpg"
+ },
+ {
+  "number": "Clas 22",
+  "ic": "74LS32",
+  "type": "OR Gates",
+  "pin": "pin\/74LS32.jpg"
+ },
+ {
+  "number": "Clas 23",
+  "ic": "74LS42",
+  "type": "Decoders",
+  "pin": "pin\/74LS42.jpg"
+ },
+ {
+  "number": "Clas 24",
+  "ic": "74LS47",
+  "type": "Decoders",
+  "pin": "pin\/74LS47.jpg"
+ },
+ {
+  "number": "Clas 25",
+  "ic": "74LS48",
+  "type": "Decoders",
+  "pin": "pin\/74LS48.jpg"
+ },
+ {
+  "number": "Clas 26",
+  "ic": "74LS74",
+  "type": "Flip-Flops",
+  "pin": "pin\/74LS74.jpg"
+ },
+ {
+  "number": "Clas 27",
+  "ic": "74LS76",
+  "type": "Flip-Flops",
+  "pin": "pin\/74LS76.jpg"
+ },
+ {
+  "number": "Clas 28",
+  "ic": "74LS83",
+  "type": "Adders",
+  "pin": "pin\/74LS83.jpg"
+ },
+ {
+  "number": "Clas 29",
+  "ic": "74LS85",
+  "type": "Comparators",
+  "pin": "pin\/74LS85.jpg"
+ },
+ {
+  "number": "Clas 30",
+  "ic": "74LS86",
+  "type": "Exclusive-OR Gates",
+  "pin": "pin\/74LS86.jpg"
+ }
+]

@@ -1,0 +1,62 @@
+modeltwentysix = [
+ {
+  "number": "Clas 61",
+  "ic": "LM35D",
+  "type": "Temperature Sensors",
+  "pin": "pin\/LM35D.jpg"
+ },
+ {
+  "number": "Clas 62",
+  "ic": "LM301",
+  "type": "Amplifiers",
+  "pin": "pin\/LM301.jpg"
+ },
+ {
+  "number": "Clas 63",
+  "ic": "LM311",
+  "type": "Comparators",
+  "pin": "pin\/LM311.jpg"
+ },
+ {
+  "number": "Clas 64",
+  "ic": "LM324",
+  "type": "Amplifiers",
+  "pin": "pin\/LM324.jpg"
+ },
+ {
+  "number": "Clas 65",
+  "ic": "LM339",
+  "type": "Comparators",
+  "pin": "pin\/LM339.jpg"
+ },
+ {
+  "number": "Clas 66",
+  "ic": "LM358",
+  "type": "Amplifiers",
+  "pin": "pin\/LM358.jpg"
+ },
+ {
+  "number": "Clas 67",
+  "ic": "LM393",
+  "type": "Comparators",
+  "pin": "pin\/LM393.jpg"
+ },
+ {
+  "number": "Clas 68",
+  "ic": "LM2904",
+  "type": "Amplifiers",
+  "pin": "pin\/LM2904.jpg"
+ },
+ {
+  "number": "Clas 69",
+  "ic": "LM2907",
+  "type": "Converters",
+  "pin": "pin\/LM2907.jpg"
+ },
+ {
+  "number": "Clas 70",
+  "ic": "MC7805",
+  "type": "Regulators",
+  "pin": "pin\/MC7805.jpg"
+ }
+]

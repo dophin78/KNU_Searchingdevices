@@ -1,0 +1,44 @@
+modeleighteen = [
+ {
+  "number": "Classss 31",
+  "farad": "100u",
+  "type": "electrolytic",
+  "pressure": 25
+ },
+ {
+  "number": "Classss 32",
+  "farad": "100u",
+  "type": "electrolytic",
+  "pressure": 50
+ },
+ {
+  "number": "Classss 33",
+  "farad": "220u",
+  "type": "electrolytic",
+  "pressure": 25
+ },
+ {
+  "number": "Classss 34",
+  "farad": "470u",
+  "type": "electrolytic",
+  "pressure": 16
+ },
+ {
+  "number": "Classss 35",
+  "farad": "1000u",
+  "type": "electrolytic",
+  "pressure": 10
+ },
+ {
+  "number": "Classss 36",
+  "farad": "1000u",
+  "type": "electrolytic",
+  "pressure": 25
+ },
+ {
+  "number": "Classss 37",
+  "farad": "2200u",
+  "type": "electrolytic",
+  "pressure": 16
+ }
+]

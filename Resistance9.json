@@ -1,0 +1,62 @@
+modelnine = [
+ {
+  "number": "Class 81",
+  "ahm": "6.8k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 82",
+  "ahm": "6.8k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 83",
+  "ahm": "7k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 84",
+  "ahm": "10k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 85",
+  "ahm": "10k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 86",
+  "ahm": "10k",
+  "capacity": 1,
+  "error": 5
+ },
+ {
+  "number": "Class 87",
+  "ahm": "12k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 88",
+  "ahm": "15k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 89",
+  "ahm": "15k",
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 90",
+  "ahm": "20k",
+  "capacity": 0.25,
+  "error": 5
+ }
+]

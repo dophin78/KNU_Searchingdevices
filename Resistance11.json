@@ -1,0 +1,62 @@
+modeleleven = [
+ {
+  "number": "Class 101",
+  "ahm": "47k",
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 102",
+  "ahm": "51k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 103",
+  "ahm": "68k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 104",
+  "ahm": "80k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 105",
+  "ahm": "82k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 106",
+  "ahm": "82k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 107",
+  "ahm": "100k",
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 108",
+  "ahm": "100k",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 109",
+  "ahm": "100k",
+  "capacity": 1,
+  "error": 5
+ },
+ {
+  "number": "Class 110",
+  "ahm": "200k",
+  "capacity": 0.25,
+  "error": 5
+ }
+]

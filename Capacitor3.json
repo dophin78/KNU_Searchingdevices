@@ -1,0 +1,62 @@
+modelseventeen = [
+ {
+  "number": "Classss 21",
+  "farad": "0.22u",
+  "type": "ceramic",
+  "pressure": 0
+ },
+ {
+  "number": "Classss 22",
+  "farad": "0.22u",
+  "type": "electrolytic",
+  "pressure": 50
+ },
+ {
+  "number": "Classss 23",
+  "farad": "0.22u",
+  "type": "film",
+  "pressure": 100
+ },
+ {
+  "number": "Classss 24",
+  "farad": "0.47u",
+  "type": "film",
+  "pressure": 100
+ },
+ {
+  "number": "Classss 25",
+  "farad": "1u",
+  "type": "electrolytic",
+  "pressure": 50
+ },
+ {
+  "number": "Classss 26",
+  "farad": "2.2u",
+  "type": "electrolytic",
+  "pressure": 50
+ },
+ {
+  "number": "Classss 27",
+  "farad": "4.7u",
+  "type": "electrolytic",
+  "pressure": 50
+ },
+ {
+  "number": "Classss 28",
+  "farad": "4.7u",
+  "type": "electrolytic",
+  "pressure": 400
+ },
+ {
+  "number": "Classss 29",
+  "farad": "10u",
+  "type": "electrolytic",
+  "pressure": 35
+ },
+ {
+  "number": "Classss 30",
+  "farad": "100u",
+  "type": "electrolytic",
+  "pressure": 16
+ }
+]

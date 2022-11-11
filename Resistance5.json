@@ -1,0 +1,62 @@
+modelfive = [
+ {
+  "number": "Class 41",
+  "ahm": 390,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 42",
+  "ahm": 470,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 43",
+  "ahm": 470,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 44",
+  "ahm": 470,
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 45",
+  "ahm": 500,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 46",
+  "ahm": 510,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 47",
+  "ahm": 680,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 48",
+  "ahm": 680,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 49",
+  "ahm": 750,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 50",
+  "ahm": "1k",
+  "capacity": 0.25,
+  "error": 1
+ }
+]

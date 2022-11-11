@@ -1,0 +1,62 @@
+modelfour = [
+ {
+  "number": "Class 31",
+  "ahm": 100,
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 32",
+  "ahm": 150,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 33",
+  "ahm": 200,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 34",
+  "ahm": 200,
+  "capacity": 2,
+  "error": 5
+ },
+ {
+  "number": "Class 35",
+  "ahm": 220,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 36",
+  "ahm": 240,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 37",
+  "ahm": 240,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 38",
+  "ahm": 270,
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 39",
+  "ahm": 300,
+  "capacity": 0.25,
+  "error": 1
+ },
+ {
+  "number": "Class 40",
+  "ahm": 300,
+  "capacity": 0.25,
+  "error": 5
+ }
+]

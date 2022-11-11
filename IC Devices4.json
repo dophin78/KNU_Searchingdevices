@@ -1,0 +1,62 @@
+modeltwentythree = [
+ {
+  "number": "Clas 31",
+  "ic": "74LS90",
+  "type": "Counters",
+  "pin": "pin\/74LS90.jpg"
+ },
+ {
+  "number": "Clas 32",
+  "ic": "74LS92",
+  "type": "Counters",
+  "pin": "pin\/74LS92.jpg"
+ },
+ {
+  "number": "Clas 33",
+  "ic": "74LS138",
+  "type": "Decoders",
+  "pin": "pin\/74LS138.jpg"
+ },
+ {
+  "number": "Clas 34",
+  "ic": "74LS151",
+  "type": "Selectors",
+  "pin": "pin\/74LS151.jpg"
+ },
+ {
+  "number": "Clas 35",
+  "ic": "74LS155",
+  "type": "Decoders",
+  "pin": "pin\/74LS155.jpg"
+ },
+ {
+  "number": "Clas 36",
+  "ic": "74LS192",
+  "type": "Counters",
+  "pin": "pin\/74LS192.jpg"
+ },
+ {
+  "number": "Clas 37",
+  "ic": "74LS193",
+  "type": "Counters",
+  "pin": "pin\/74LS193.jpg"
+ },
+ {
+  "number": "Clas 38",
+  "ic": "74LS266",
+  "type": "Exclusive-NOR Gates",
+  "pin": "pin\/74LS266.jpg"
+ },
+ {
+  "number": "Clas 39",
+  "ic": "74LS279",
+  "type": "Latches",
+  "pin": "pin\/74LS279.jpg"
+ },
+ {
+  "number": "Clas 40",
+  "ic": "74LS390",
+  "type": "Counters",
+  "pin": "pin\/74LS390.jpg"
+ }
+]

@@ -1,0 +1,38 @@
+modelthirteen = [
+ {
+  "number": "Class 121",
+  "ahm": "1.5M",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 122",
+  "ahm": "2M",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 123",
+  "ahm": "4.7M",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 124",
+  "ahm": "5.1M",
+  "capacity": 0.25,
+  "error": 5
+ },
+ {
+  "number": "Class 125",
+  "ahm": "cement 1",
+  "capacity": 10,
+  "error": 0
+ },
+ {
+  "number": "Class 126",
+  "ahm": "cement 200",
+  "capacity": 5,
+  "error": 0
+ }
+]

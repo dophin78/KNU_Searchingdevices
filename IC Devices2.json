@@ -1,0 +1,62 @@
+modeltwentyone = [
+ {
+  "number": "Clas 11",
+  "ic": "2P4M-AZ",
+  "type": "Thyristor",
+  "pin": "pin\/2P4M-AZ.jpg"
+ },
+ {
+  "number": "Clas 12",
+  "ic": "74LS00",
+  "type": "NAND Gates",
+  "pin": "pin\/74LS00.jpg"
+ },
+ {
+  "number": "Clas 13",
+  "ic": "74LS02",
+  "type": "NOR Gates",
+  "pin": "pin\/74LS02.jpg"
+ },
+ {
+  "number": "Clas 14",
+  "ic": "74LS04",
+  "type": "Inverters",
+  "pin": "pin\/74LS(04-05).jpg"
+ },
+ {
+  "number": "Clas 15",
+  "ic": "74LS05",
+  "type": "Inverters",
+  "pin": "pin\/74LS(04-05).jpg"
+ },
+ {
+  "number": "Clas 16",
+  "ic": "74LS08",
+  "type": "AND Gates",
+  "pin": "pin\/74LS08.jpg"
+ },
+ {
+  "number": "Clas 17",
+  "ic": "74LS10",
+  "type": "NAND Gates",
+  "pin": "pin\/74LS10.jpg"
+ },
+ {
+  "number": "Clas 18",
+  "ic": "74LS11",
+  "type": "AND Gates",
+  "pin": "pin\/74LS11.jpg"
+ },
+ {
+  "number": "Clas 19",
+  "ic": "74LS14",
+  "type": "Inverters",
+  "pin": "pin\/74LS14.jpg"
+ },
+ {
+  "number": "Clas 20",
+  "ic": "74LS21",
+  "type": "AND Gates",
+  "pin": "pin\/74LS21.jpg"
+ }
+]

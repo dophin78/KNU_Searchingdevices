@@ -1,0 +1,22 @@
+{
+    "tfjsVersion": "1.3.1",
+    "tmVersion": "2.4.5",
+    "packageVersion": "0.8.4-alpha2",
+    "packageName": "@teachablemachine/image",
+    "timeStamp": "2022-11-04T12:07:49.083Z",
+    "userMetadata": {},
+    "modelName": "tm-my-image-model",
+    "labels": [
+        "Clas 1",
+        "Clas 2",
+        "Clas 3",
+        "Clas 4",
+        "Clas 5",
+        "Clas 6",
+        "Clas 7",
+        "Clas 8",
+        "Clas 9",
+        "Clas 10"
+    ],
+    "imageSize": 224
+}

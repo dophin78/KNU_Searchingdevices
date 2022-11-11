@@ -1,0 +1,62 @@
+modeltwentyseven = [
+ {
+  "number": "Clas 71",
+  "ic": "MC7806",
+  "type": "Regulators",
+  "pin": "pin\/MC7806.jpg"
+ },
+ {
+  "number": "Clas 72",
+  "ic": "MC7809",
+  "type": "Regulators",
+  "pin": "pin\/MC7809.jpg"
+ },
+ {
+  "number": "Clas 73",
+  "ic": "MC7812",
+  "type": "Regulators",
+  "pin": "pin\/MC7812.jpg"
+ },
+ {
+  "number": "Clas 74",
+  "ic": "MC14081",
+  "type": "AND Gates",
+  "pin": "pin\/MC14081.jpg"
+ },
+ {
+  "number": "Clas 75",
+  "ic": "NE555",
+  "type": "Timers",
+  "pin": "pin\/NE555.jpg"
+ },
+ {
+  "number": "Clas 76",
+  "ic": "NTC502",
+  "type": "Thermistors",
+  "pin": "pin\/NTC502.jpg"
+ },
+ {
+  "number": "Clas 77",
+  "ic": "PDA1-202Z",
+  "type": "Relay",
+  "pin": "pin\/PDA1-202Z.jpg"
+ },
+ {
+  "number": "Clas 78",
+  "ic": "PIC16F877A",
+  "type": "Microcontrollers",
+  "pin": "pin\/PIC16F877A.jpg"
+ },
+ {
+  "number": "Clas 79",
+  "ic": "PN2907",
+  "type": "Transistor",
+  "pin": "pin\/PN2907.jpg"
+ },
+ {
+  "number": "Clas 80",
+  "ic": "SG23FF",
+  "type": "Photointerrupters",
+  "pin": "pin\/SG23FF.jpg"
+ }
+]
