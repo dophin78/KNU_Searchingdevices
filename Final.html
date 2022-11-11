@@ -1,1224 +1,1154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div>KNU_Searching devices</div>
-    <button type="button" onclick="init1()">Resistance</button>
-    <button type="button" onclick="init2()">Variable Resistance</button>
-    <button type="button" onclick="init3()">Capacitor</button>
-    <button type="button" onclick="init4()">Inductor</button>
-    <button type="button" onclick="init5()">IC Devices</button>
-    <div style="padding:10px;"></div>
-    <div>Press the Reset button, before searching for other devices</div>
-    <button onClick="window.location.reload()">Reset</button>
-    <div style="padding:10px;"></div>
-    <div id="webcam-container"></div>
-    <div id="label-container"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script src="Resistance1.json" type="text/javascript"></script>
-    <script src="Resistance2.json" type="text/javascript"></script>
-    <script src="Resistance3.json" type="text/javascript"></script>
-    <script src="Resistance4.json" type="text/javascript"></script>
-    <script src="Resistance5.json" type="text/javascript"></script>
-    <script src="Resistance6.json" type="text/javascript"></script>
-    <script src="Resistance7.json" type="text/javascript"></script>
-    <script src="Resistance8.json" type="text/javascript"></script>
-    <script src="Resistance9.json" type="text/javascript"></script>
-    <script src="Resistance10.json" type="text/javascript"></script>
-    <script src="Resistance11.json" type="text/javascript"></script>
-    <script src="Resistance12.json" type="text/javascript"></script>
-    <script src="Resistance13.json" type="text/javascript"></script>
-    <script src="Variable Resistance.json" type="text/javascript"></script>
-    <script src="Capacitor1.json" type="text/javascript"></script>
-    <script src="Capacitor2.json" type="text/javascript"></script>
-    <script src="Capacitor3.json" type="text/javascript"></script>
-    <script src="Capacitor4.json" type="text/javascript"></script>
-    <script src="Inductor.json" type="text/javascript"></script>
-    <script src="IC Devices1.json" type="text/javascript"></script>
-    <script src="IC Devices2.json" type="text/javascript"></script>
-    <script src="IC Devices3.json" type="text/javascript"></script>
-    <script src="IC Devices4.json" type="text/javascript"></script>
-    <script src="IC Devices5.json" type="text/javascript"></script>
-    <script src="IC Devices6.json" type="text/javascript"></script>
-    <script src="IC Devices7.json" type="text/javascript"></script>
-    <script src="IC Devices8.json" type="text/javascript"></script>
-    <script src="IC Devices9.json" type="text/javascript"></script>
-    <script type="text/javascript">
-      // More API functions here:
-      // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-      
-      let jsonclassName1 = [];
-      let jsonahm1 = [];
-      let jsoncapacity = [];
-      let jsonerror = [];
+    <head>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>KNU_Searching devices</div>
+        <button type="button" onclick="init1()">Resistance</button>
+        <button type="button" onclick="init2()">Variable Resistance</button>
+        <button type="button" onclick="init3()">Capacitor</button>
+        <button type="button" onclick="init4()">Inductor</button>
+        <button type="button" onclick="init5()">IC Devices</button>
+        <div style="padding: 10px;"></div>
+        <div>Press the Reset button, before searching for other devices</div>
+        <button onClick="window.location.reload()">Reset</button>
+        <div style="padding: 10px;"></div>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script src="Resistance1.json" type="text/javascript"></script>
+        <script src="Resistance2.json" type="text/javascript"></script>
+        <script src="Resistance3.json" type="text/javascript"></script>
+        <script src="Resistance4.json" type="text/javascript"></script>
+        <script src="Resistance5.json" type="text/javascript"></script>
+        <script src="Resistance6.json" type="text/javascript"></script>
+        <script src="Resistance7.json" type="text/javascript"></script>
+        <script src="Resistance8.json" type="text/javascript"></script>
+        <script src="Resistance9.json" type="text/javascript"></script>
+        <script src="Resistance10.json" type="text/javascript"></script>
+        <script src="Resistance11.json" type="text/javascript"></script>
+        <script src="Resistance12.json" type="text/javascript"></script>
+        <script src="Resistance13.json" type="text/javascript"></script>
+        <script src="Variable Resistance.json" type="text/javascript"></script>
+        <script src="Capacitor1.json" type="text/javascript"></script>
+        <script src="Capacitor2.json" type="text/javascript"></script>
+        <script src="Capacitor3.json" type="text/javascript"></script>
+        <script src="Capacitor4.json" type="text/javascript"></script>
+        <script src="Inductor.json" type="text/javascript"></script>
+        <script src="IC Devices1.json" type="text/javascript"></script>
+        <script src="IC Devices2.json" type="text/javascript"></script>
+        <script src="IC Devices3.json" type="text/javascript"></script>
+        <script src="IC Devices4.json" type="text/javascript"></script>
+        <script src="IC Devices5.json" type="text/javascript"></script>
+        <script src="IC Devices6.json" type="text/javascript"></script>
+        <script src="IC Devices7.json" type="text/javascript"></script>
+        <script src="IC Devices8.json" type="text/javascript"></script>
+        <script src="IC Devices9.json" type="text/javascript"></script>
+        <script type="text/javascript">
+            // More API functions here:
+            // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
-      var dataone = JSON.parse(JSON.stringify(modelone));
-      for (let i = 0; i < dataone.length; i++) {
-        jsonclassName1.push(dataone[i].number);
-        jsonahm1.push(dataone[i].ahm);
-        jsoncapacity.push(dataone[i].capacity);
-        jsonerror.push(dataone[i].error);
-      }
-      var datatwo = JSON.parse(JSON.stringify(modeltwo));
-      for (let i = 0; i < datatwo.length; i++) {
-        jsonclassName1.push(datatwo[i].number);
-        jsonahm1.push(datatwo[i].ahm);
-        jsoncapacity.push(datatwo[i].capacity);
-        jsonerror.push(datatwo[i].error);
-      }
-      var datathree = JSON.parse(JSON.stringify(modelthree));
-      for (let i = 0; i < datathree.length; i++) {
-        jsonclassName1.push(datathree[i].number);
-        jsonahm1.push(datathree[i].ahm);
-        jsoncapacity.push(datathree[i].capacity);
-        jsonerror.push(datathree[i].error);
-      }
-      var datafour = JSON.parse(JSON.stringify(modelfour));
-      for (let i = 0; i < datafour.length; i++) {
-        jsonclassName1.push(datafour[i].number);
-        jsonahm1.push(datafour[i].ahm);
-        jsoncapacity.push(datafour[i].capacity);
-        jsonerror.push(datafour[i].error);
-      }
-      var datafive = JSON.parse(JSON.stringify(modelfive));
-      for (let i = 0; i < datafive.length; i++) {
-        jsonclassName1.push(datafive[i].number);
-        jsonahm1.push(datafive[i].ahm);
-        jsoncapacity.push(datafive[i].capacity);
-        jsonerror.push(datafive[i].error);
-      }
-      var datasix = JSON.parse(JSON.stringify(modelsix));
-      for (let i = 0; i < datasix.length; i++) {
-        jsonclassName1.push(datasix[i].number);
-        jsonahm1.push(datasix[i].ahm);
-        jsoncapacity.push(datasix[i].capacity);
-        jsonerror.push(datasix[i].error);
-      }
-      var dataseven = JSON.parse(JSON.stringify(modelseven));
-      for (let i = 0; i < dataseven.length; i++) {
-        jsonclassName1.push(dataseven[i].number);
-        jsonahm1.push(dataseven[i].ahm);
-        jsoncapacity.push(dataseven[i].capacity);
-        jsonerror.push(dataseven[i].error);
-      }
-      var dataeight = JSON.parse(JSON.stringify(modeleight));
-      for (let i = 0; i < dataeight.length; i++) {
-        jsonclassName1.push(dataeight[i].number);
-        jsonahm1.push(dataeight[i].ahm);
-        jsoncapacity.push(dataeight[i].capacity);
-        jsonerror.push(dataeight[i].error);
-      }
-      var datanine = JSON.parse(JSON.stringify(modelnine));
-      for (let i = 0; i < datanine.length; i++) {
-        jsonclassName1.push(datanine[i].number);
-        jsonahm1.push(datanine[i].ahm);
-        jsoncapacity.push(datanine[i].capacity);
-        jsonerror.push(datanine[i].error);
-      }
-      var dataten = JSON.parse(JSON.stringify(modelten));
-      for (let i = 0; i < dataten.length; i++) {
-        jsonclassName1.push(dataten[i].number);
-        jsonahm1.push(dataten[i].ahm);
-        jsoncapacity.push(dataten[i].capacity);
-        jsonerror.push(dataten[i].error);
-      }
-      var dataeleven = JSON.parse(JSON.stringify(modeleleven));
-      for (let i = 0; i < dataeleven.length; i++) {
-        jsonclassName1.push(dataeleven[i].number);
-        jsonahm1.push(dataeleven[i].ahm);
-        jsoncapacity.push(dataeleven[i].capacity);
-        jsonerror.push(dataeleven[i].error);
-      }
-      var datatwelve = JSON.parse(JSON.stringify(modeltwelve));
-      for (let i = 0; i < datatwelve.length; i++) {
-        jsonclassName1.push(datatwelve[i].number);
-        jsonahm1.push(datatwelve[i].ahm);
-        jsoncapacity.push(datatwelve[i].capacity);
-        jsonerror.push(datatwelve[i].error);
-      }
-      var datathirteen = JSON.parse(JSON.stringify(modelthirteen));
-      for (let i = 0; i < datathirteen.length; i++) {
-        jsonclassName1.push(datathirteen[i].number);
-        jsonahm1.push(datathirteen[i].ahm);
-        jsoncapacity.push(datathirteen[i].capacity);
-        jsonerror.push(datathirteen[i].error);
-      }
+            let jsonclassName1 = [];
+            let jsonahm1 = [];
+            let jsoncapacity = [];
+            let jsonerror = [];
 
-      let jsonclassName2 = [];
-      let jsonahm2 = [];
+            var dataone = JSON.parse(JSON.stringify(modelone));
+            for (let i = 0; i < dataone.length; i++) {
+                jsonclassName1.push(dataone[i].number);
+                jsonahm1.push(dataone[i].ahm);
+                jsoncapacity.push(dataone[i].capacity);
+                jsonerror.push(dataone[i].error);
+            }
+            var datatwo = JSON.parse(JSON.stringify(modeltwo));
+            for (let i = 0; i < datatwo.length; i++) {
+                jsonclassName1.push(datatwo[i].number);
+                jsonahm1.push(datatwo[i].ahm);
+                jsoncapacity.push(datatwo[i].capacity);
+                jsonerror.push(datatwo[i].error);
+            }
+            var datathree = JSON.parse(JSON.stringify(modelthree));
+            for (let i = 0; i < datathree.length; i++) {
+                jsonclassName1.push(datathree[i].number);
+                jsonahm1.push(datathree[i].ahm);
+                jsoncapacity.push(datathree[i].capacity);
+                jsonerror.push(datathree[i].error);
+            }
+            var datafour = JSON.parse(JSON.stringify(modelfour));
+            for (let i = 0; i < datafour.length; i++) {
+                jsonclassName1.push(datafour[i].number);
+                jsonahm1.push(datafour[i].ahm);
+                jsoncapacity.push(datafour[i].capacity);
+                jsonerror.push(datafour[i].error);
+            }
+            var datafive = JSON.parse(JSON.stringify(modelfive));
+            for (let i = 0; i < datafive.length; i++) {
+                jsonclassName1.push(datafive[i].number);
+                jsonahm1.push(datafive[i].ahm);
+                jsoncapacity.push(datafive[i].capacity);
+                jsonerror.push(datafive[i].error);
+            }
+            var datasix = JSON.parse(JSON.stringify(modelsix));
+            for (let i = 0; i < datasix.length; i++) {
+                jsonclassName1.push(datasix[i].number);
+                jsonahm1.push(datasix[i].ahm);
+                jsoncapacity.push(datasix[i].capacity);
+                jsonerror.push(datasix[i].error);
+            }
+            var dataseven = JSON.parse(JSON.stringify(modelseven));
+            for (let i = 0; i < dataseven.length; i++) {
+                jsonclassName1.push(dataseven[i].number);
+                jsonahm1.push(dataseven[i].ahm);
+                jsoncapacity.push(dataseven[i].capacity);
+                jsonerror.push(dataseven[i].error);
+            }
+            var dataeight = JSON.parse(JSON.stringify(modeleight));
+            for (let i = 0; i < dataeight.length; i++) {
+                jsonclassName1.push(dataeight[i].number);
+                jsonahm1.push(dataeight[i].ahm);
+                jsoncapacity.push(dataeight[i].capacity);
+                jsonerror.push(dataeight[i].error);
+            }
+            var datanine = JSON.parse(JSON.stringify(modelnine));
+            for (let i = 0; i < datanine.length; i++) {
+                jsonclassName1.push(datanine[i].number);
+                jsonahm1.push(datanine[i].ahm);
+                jsoncapacity.push(datanine[i].capacity);
+                jsonerror.push(datanine[i].error);
+            }
+            var dataten = JSON.parse(JSON.stringify(modelten));
+            for (let i = 0; i < dataten.length; i++) {
+                jsonclassName1.push(dataten[i].number);
+                jsonahm1.push(dataten[i].ahm);
+                jsoncapacity.push(dataten[i].capacity);
+                jsonerror.push(dataten[i].error);
+            }
+            var dataeleven = JSON.parse(JSON.stringify(modeleleven));
+            for (let i = 0; i < dataeleven.length; i++) {
+                jsonclassName1.push(dataeleven[i].number);
+                jsonahm1.push(dataeleven[i].ahm);
+                jsoncapacity.push(dataeleven[i].capacity);
+                jsonerror.push(dataeleven[i].error);
+            }
+            var datatwelve = JSON.parse(JSON.stringify(modeltwelve));
+            for (let i = 0; i < datatwelve.length; i++) {
+                jsonclassName1.push(datatwelve[i].number);
+                jsonahm1.push(datatwelve[i].ahm);
+                jsoncapacity.push(datatwelve[i].capacity);
+                jsonerror.push(datatwelve[i].error);
+            }
+            var datathirteen = JSON.parse(JSON.stringify(modelthirteen));
+            for (let i = 0; i < datathirteen.length; i++) {
+                jsonclassName1.push(datathirteen[i].number);
+                jsonahm1.push(datathirteen[i].ahm);
+                jsoncapacity.push(datathirteen[i].capacity);
+                jsonerror.push(datathirteen[i].error);
+            }
 
-      var datafourteen = JSON.parse(JSON.stringify(modelfourteen));
-      for (let i = 0; i < datafourteen.length; i++) {
-        jsonclassName2.push(datafourteen[i].number);
-        jsonahm2.push(datafourteen[i].ahm);
-      }      
+            let jsonclassName2 = [];
+            let jsonahm2 = [];
 
-      let jsonclassName3 = [];
-      let jsonfarad = [];
-      let jsontype1 = [];
-      let jsonpressure = [];
+            var datafourteen = JSON.parse(JSON.stringify(modelfourteen));
+            for (let i = 0; i < datafourteen.length; i++) {
+                jsonclassName2.push(datafourteen[i].number);
+                jsonahm2.push(datafourteen[i].ahm);
+            }
 
-      var datafifteen = JSON.parse(JSON.stringify(modelfifteen));
-      for (let i = 0; i < datafifteen.length; i++) {
-        jsonclassName3.push(datafifteen[i].number);
-        jsonfarad.push(datafifteen[i].farad);
-        jsontype1.push(datafifteen[i].type);
-        jsonpressure.push(datafifteen[i].pressure);
-      }
-      var datasixteen = JSON.parse(JSON.stringify(modelsixteen));
-      for (let i = 0; i < datasixteen.length; i++) {
-        jsonclassName3.push(datasixteen[i].number);
-        jsonfarad.push(datasixteen[i].farad);
-        jsontype1.push(datasixteen[i].type);
-        jsonpressure.push(datasixteen[i].pressure);
-      }
-      var dataseventeen = JSON.parse(JSON.stringify(modelseventeen));
-      for (let i = 0; i < dataseventeen.length; i++) {
-        jsonclassName3.push(dataseventeen[i].number);
-        jsonfarad.push(dataseventeen[i].farad);
-        jsontype1.push(dataseventeen[i].type);
-        jsonpressure.push(dataseventeen[i].pressure);
-      }
-      var dataeighteen = JSON.parse(JSON.stringify(modeleighteen));
-      for (let i = 0; i < dataeighteen.length; i++) {
-        jsonclassName3.push(dataeighteen[i].number);
-        jsonfarad.push(dataeighteen[i].farad);
-        jsontype1.push(dataeighteen[i].type);
-        jsonpressure.push(dataeighteen[i].pressure);
-      }
+            let jsonclassName3 = [];
+            let jsonfarad = [];
+            let jsontype1 = [];
+            let jsonpressure = [];
 
-      let jsonclassName4 = [];
-      let jsonhenry = [];
+            var datafifteen = JSON.parse(JSON.stringify(modelfifteen));
+            for (let i = 0; i < datafifteen.length; i++) {
+                jsonclassName3.push(datafifteen[i].number);
+                jsonfarad.push(datafifteen[i].farad);
+                jsontype1.push(datafifteen[i].type);
+                jsonpressure.push(datafifteen[i].pressure);
+            }
+            var datasixteen = JSON.parse(JSON.stringify(modelsixteen));
+            for (let i = 0; i < datasixteen.length; i++) {
+                jsonclassName3.push(datasixteen[i].number);
+                jsonfarad.push(datasixteen[i].farad);
+                jsontype1.push(datasixteen[i].type);
+                jsonpressure.push(datasixteen[i].pressure);
+            }
+            var dataseventeen = JSON.parse(JSON.stringify(modelseventeen));
+            for (let i = 0; i < dataseventeen.length; i++) {
+                jsonclassName3.push(dataseventeen[i].number);
+                jsonfarad.push(dataseventeen[i].farad);
+                jsontype1.push(dataseventeen[i].type);
+                jsonpressure.push(dataseventeen[i].pressure);
+            }
+            var dataeighteen = JSON.parse(JSON.stringify(modeleighteen));
+            for (let i = 0; i < dataeighteen.length; i++) {
+                jsonclassName3.push(dataeighteen[i].number);
+                jsonfarad.push(dataeighteen[i].farad);
+                jsontype1.push(dataeighteen[i].type);
+                jsonpressure.push(dataeighteen[i].pressure);
+            }
 
-      var datanineteen = JSON.parse(JSON.stringify(modelnineteen));
-      for (let i = 0; i < datanineteen.length; i++) {
-        jsonclassName4.push(datanineteen[i].number);
-        jsonhenry.push(datanineteen[i].henry);
-      }
+            let jsonclassName4 = [];
+            let jsonhenry = [];
 
-      let jsonclassName5 = [];
-      let jsonic = [];
-      let jsontype2 = [];
-      let jsonpin = [];
+            var datanineteen = JSON.parse(JSON.stringify(modelnineteen));
+            for (let i = 0; i < datanineteen.length; i++) {
+                jsonclassName4.push(datanineteen[i].number);
+                jsonhenry.push(datanineteen[i].henry);
+            }
 
-      var datatwenty = JSON.parse(JSON.stringify(modeltwenty));
-      for (let i = 0; i < datatwenty.length; i++) {
-        jsonclassName5.push(datatwenty[i].number);
-        jsonic.push(datatwenty[i].ic);
-        jsontype2.push(datatwenty[i].type);
-        jsonpin.push(datatwenty[i].pin);
-      }
+            let jsonclassName5 = [];
+            let jsonic = [];
+            let jsontype2 = [];
+            let jsonpin = [];
 
-      var datatwentyone = JSON.parse(JSON.stringify(modeltwentyone));
-      for (let i = 0; i < datatwentyone.length; i++) {
-        jsonclassName5.push(datatwentyone[i].number);
-        jsonic.push(datatwentyone[i].ic);
-        jsontype2.push(datatwentyone[i].type);
-        jsonpin.push(datatwentyone[i].pin);
-      }
+            var datatwenty = JSON.parse(JSON.stringify(modeltwenty));
+            for (let i = 0; i < datatwenty.length; i++) {
+                jsonclassName5.push(datatwenty[i].number);
+                jsonic.push(datatwenty[i].ic);
+                jsontype2.push(datatwenty[i].type);
+                jsonpin.push(datatwenty[i].pin);
+            }
 
-      var datatwentytwo = JSON.parse(JSON.stringify(modeltwentytwo));
-      for (let i = 0; i < datatwentytwo.length; i++) {
-        jsonclassName5.push(datatwentytwo[i].number);
-        jsonic.push(datatwentytwo[i].ic);
-        jsontype2.push(datatwentytwo[i].type);
-        jsonpin.push(datatwentytwo[i].pin);
-      }
+            var datatwentyone = JSON.parse(JSON.stringify(modeltwentyone));
+            for (let i = 0; i < datatwentyone.length; i++) {
+                jsonclassName5.push(datatwentyone[i].number);
+                jsonic.push(datatwentyone[i].ic);
+                jsontype2.push(datatwentyone[i].type);
+                jsonpin.push(datatwentyone[i].pin);
+            }
 
-      var datatwentythree = JSON.parse(JSON.stringify(modeltwentythree));
-      for (let i = 0; i < datatwentythree.length; i++) {
-        jsonclassName5.push(datatwentythree[i].number);
-        jsonic.push(datatwentythree[i].ic);
-        jsontype2.push(datatwentythree[i].type);
-        jsonpin.push(datatwentythree[i].pin);
-      }
+            var datatwentytwo = JSON.parse(JSON.stringify(modeltwentytwo));
+            for (let i = 0; i < datatwentytwo.length; i++) {
+                jsonclassName5.push(datatwentytwo[i].number);
+                jsonic.push(datatwentytwo[i].ic);
+                jsontype2.push(datatwentytwo[i].type);
+                jsonpin.push(datatwentytwo[i].pin);
+            }
 
-      var datatwentyfour = JSON.parse(JSON.stringify(modeltwentyfour));
-      for (let i = 0; i < datatwentyfour.length; i++) {
-        jsonclassName5.push(datatwentyfour[i].number);
-        jsonic.push(datatwentyfour[i].ic);
-        jsontype2.push(datatwentyfour[i].type);
-        jsonpin.push(datatwentyfour[i].pin);
-      }
+            var datatwentythree = JSON.parse(JSON.stringify(modeltwentythree));
+            for (let i = 0; i < datatwentythree.length; i++) {
+                jsonclassName5.push(datatwentythree[i].number);
+                jsonic.push(datatwentythree[i].ic);
+                jsontype2.push(datatwentythree[i].type);
+                jsonpin.push(datatwentythree[i].pin);
+            }
 
-      var datatwentyfive = JSON.parse(JSON.stringify(modeltwentyfive));
-      for (let i = 0; i < datatwentyfive.length; i++) {
-        jsonclassName5.push(datatwentyfive[i].number);
-        jsonic.push(datatwentyfive[i].ic);
-        jsontype2.push(datatwentyfive[i].type);
-        jsonpin.push(datatwentyfive[i].pin);
-      }
+            var datatwentyfour = JSON.parse(JSON.stringify(modeltwentyfour));
+            for (let i = 0; i < datatwentyfour.length; i++) {
+                jsonclassName5.push(datatwentyfour[i].number);
+                jsonic.push(datatwentyfour[i].ic);
+                jsontype2.push(datatwentyfour[i].type);
+                jsonpin.push(datatwentyfour[i].pin);
+            }
 
-      var datatwentysix = JSON.parse(JSON.stringify(modeltwentysix));
-      for (let i = 0; i < datatwentysix.length; i++) {
-        jsonclassName5.push(datatwentysix[i].number);
-        jsonic.push(datatwentysix[i].ic);
-        jsontype2.push(datatwentysix[i].type);
-        jsonpin.push(datatwentysix[i].pin);
-      }
+            var datatwentyfive = JSON.parse(JSON.stringify(modeltwentyfive));
+            for (let i = 0; i < datatwentyfive.length; i++) {
+                jsonclassName5.push(datatwentyfive[i].number);
+                jsonic.push(datatwentyfive[i].ic);
+                jsontype2.push(datatwentyfive[i].type);
+                jsonpin.push(datatwentyfive[i].pin);
+            }
 
-      var datatwentyseven = JSON.parse(JSON.stringify(modeltwentyseven));
-      for (let i = 0; i < datatwentyseven.length; i++) {
-        jsonclassName5.push(datatwentyseven[i].number);
-        jsonic.push(datatwentyseven[i].ic);
-        jsontype2.push(datatwentyseven[i].type);
-        jsonpin.push(datatwentyseven[i].pin);
-      }
+            var datatwentysix = JSON.parse(JSON.stringify(modeltwentysix));
+            for (let i = 0; i < datatwentysix.length; i++) {
+                jsonclassName5.push(datatwentysix[i].number);
+                jsonic.push(datatwentysix[i].ic);
+                jsontype2.push(datatwentysix[i].type);
+                jsonpin.push(datatwentysix[i].pin);
+            }
 
-      var datatwentyeight = JSON.parse(JSON.stringify(modeltwentyeight));
-      for (let i = 0; i < datatwentyeight.length; i++) {
-        jsonclassName5.push(datatwentyeight[i].number);
-        jsonic.push(datatwentyeight[i].ic);
-        jsontype2.push(datatwentyeight[i].type);
-        jsonpin.push(datatwentyeight[i].pin);
-      }
+            var datatwentyseven = JSON.parse(JSON.stringify(modeltwentyseven));
+            for (let i = 0; i < datatwentyseven.length; i++) {
+                jsonclassName5.push(datatwentyseven[i].number);
+                jsonic.push(datatwentyseven[i].ic);
+                jsontype2.push(datatwentyseven[i].type);
+                jsonpin.push(datatwentyseven[i].pin);
+            }
 
-      console.log(jsonclassName1);
-      console.log(jsonahm1);
-      console.log(jsoncapacity);
-      console.log(jsonerror);
-      console.log(jsonclassName2);
-      console.log(jsonahm2);
-      console.log(jsonclassName3);
-      console.log(jsonfarad);
-      console.log(jsontype1);
-      console.log(jsonpressure);
-      console.log(jsonclassName4);
-      console.log(jsonhenry);
-      console.log(jsonclassName5);
-      console.log(jsonic);
-      console.log(jsontype2);
-      console.log(jsonpin);
+            var datatwentyeight = JSON.parse(JSON.stringify(modeltwentyeight));
+            for (let i = 0; i < datatwentyeight.length; i++) {
+                jsonclassName5.push(datatwentyeight[i].number);
+                jsonic.push(datatwentyeight[i].ic);
+                jsontype2.push(datatwentyeight[i].type);
+                jsonpin.push(datatwentyeight[i].pin);
+            }
 
-      // the link to your model provided by Teachable Machine export panel
-      const URL1 = "my_model_1/";
-      const URL2 = "my_model_2/";
-      const URL3 = "my_model_3/";
-      const URL4 = "my_model_4/";
-      const URL5 = "my_model_5/";
-      const URL6 = "my_model_6/";
-      const URL7 = "my_model_7/";
-      const URL8 = "my_model_8/";
-      const URL9 = "my_model_9/";
-      const URL10 = "my_model_10/";
-      const URL11 = "my_model_11/";
-      const URL12 = "my_model_12/";
-      const URL13 = "my_model_13/";
-      const URL14 = "my_model_14/";
-      const URL15 = "my_model_15/";
-      const URL16 = "my_model_16/";
-      const URL17 = "my_model_17/";
-      const URL18 = "my_model_18/";
-      const URL19 = "my_model_19/";
-      const URL20 = "my_model_20/";
-      const URL21 = "my_model_21/";
-      const URL22 = "my_model_22/";
-      const URL23 = "my_model_23/";
-      const URL24 = "my_model_24/";
-      const URL25 = "my_model_25/";
-      const URL26 = "my_model_26/";
-      const URL27 = "my_model_27/";
-      const URL28 = "my_model_28/";
-      let model1, webcam, labelContainer, maxPredictions1;
-      let model2, maxPredictions2;
-      let model3, maxPredictions3;
-      let model4, maxPredictions4;
-      let model5, maxPredictions5;
-      let model6, maxPredictions6;
-      let model7, maxPredictions7;
-      let model8, maxPredictions8;
-      let model9, maxPredictions9;
-      let model10, maxPredictions10;
-      let model11, maxPredictions11;
-      let model12, maxPredictions12;
-      let model13, maxPredictions13;
-      let model14, maxPredictions14;
-      let model15, maxPredictions15;
-      let model16, maxPredictions16;
-      let model17, maxPredictions17;
-      let model18, maxPredictions18;
-      let model19, maxPredictions19;
-      let model20, maxPredictions20;
-      let model21, maxPredictions21;
-      let model22, maxPredictions22;
-      let model23, maxPredictions23;
-      let model24, maxPredictions24;
-      let model25, maxPredictions25;
-      let model26, maxPredictions26;
-      let model27, maxPredictions27;
-      let model28, maxPredictions28;
+            console.log(jsonclassName1);
+            console.log(jsonahm1);
+            console.log(jsoncapacity);
+            console.log(jsonerror);
+            console.log(jsonclassName2);
+            console.log(jsonahm2);
+            console.log(jsonclassName3);
+            console.log(jsonfarad);
+            console.log(jsontype1);
+            console.log(jsonpressure);
+            console.log(jsonclassName4);
+            console.log(jsonhenry);
+            console.log(jsonclassName5);
+            console.log(jsonic);
+            console.log(jsontype2);
+            console.log(jsonpin);
 
-      // Load the image model and setup the webcam
-      async function init1() {
-        const modelURL1 = URL1 + "model1.json";
-        const metadataURL1 = URL1 + "metadata1.json";
-        const modelURL2 = URL2 + "model2.json";
-        const metadataURL2 = URL2 + "metadata2.json";
-        const modelURL3 = URL3 + "model3.json";
-        const metadataURL3 = URL3 + "metadata3.json";
-        const modelURL4 = URL4 + "model4.json";
-        const metadataURL4 = URL4 + "metadata4.json";
-        const modelURL5 = URL5 + "model5.json";
-        const metadataURL5 = URL5 + "metadata5.json";
-        const modelURL6 = URL6 + "model6.json";
-        const metadataURL6 = URL6 + "metadata6.json";
-        const modelURL7 = URL7 + "model7.json";
-        const metadataURL7 = URL7 + "metadata7.json";
-        const modelURL8 = URL8 + "model8.json";
-        const metadataURL8 = URL8 + "metadata8.json";
-        const modelURL9 = URL9 + "model9.json";
-        const metadataURL9 = URL9 + "metadata9.json";
-        const modelURL10 = URL10 + "model10.json";
-        const metadataURL10 = URL10 + "metadata10.json";
-        const modelURL11 = URL11 + "model11.json";
-        const metadataURL11 = URL11 + "metadata11.json";
-        const modelURL12 = URL12 + "model12.json";
-        const metadataURL12 = URL12 + "metadata12.json";
-        const modelURL13 = URL13 + "model13.json";
-        const metadataURL13 = URL13 + "metadata13.json";
-        
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-        model1 = await tmImage.load(modelURL1, metadataURL1);
-        model2 = await tmImage.load(modelURL2, metadataURL2);
-        model3 = await tmImage.load(modelURL3, metadataURL3);
-        model4 = await tmImage.load(modelURL4, metadataURL4);
-        model5 = await tmImage.load(modelURL5, metadataURL5);
-        model6 = await tmImage.load(modelURL6, metadataURL6);
-        model7 = await tmImage.load(modelURL7, metadataURL7);
-        model8 = await tmImage.load(modelURL8, metadataURL8);
-        model9 = await tmImage.load(modelURL9, metadataURL9);
-        model10 = await tmImage.load(modelURL10, metadataURL10);
-        model11 = await tmImage.load(modelURL11, metadataURL11);
-        model12 = await tmImage.load(modelURL12, metadataURL12);
-        model13 = await tmImage.load(modelURL13, metadataURL13);
-        maxPredictions1 = model1.getTotalClasses();
-        maxPredictions2 = model2.getTotalClasses();
-        maxPredictions3 = model3.getTotalClasses();
-        maxPredictions4 = model4.getTotalClasses();
-        maxPredictions5 = model5.getTotalClasses();
-        maxPredictions6 = model6.getTotalClasses();
-        maxPredictions7 = model7.getTotalClasses();
-        maxPredictions8 = model8.getTotalClasses();
-        maxPredictions9 = model9.getTotalClasses();
-        maxPredictions10 = model10.getTotalClasses();
-        maxPredictions11 = model11.getTotalClasses();
-        maxPredictions12 = model12.getTotalClasses();
-        maxPredictions13 = model13.getTotalClasses();
-       
-        // Convenience function to setup a webcam
-        const flip = false; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup({ facingMode: "environment" }); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop1);
-       
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions1; i++) {
-          // and class labels
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions2; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions3; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions4; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions5; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions6; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions7; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions8; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions9; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions10; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions11; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions12; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions13; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-      }
-     
-      async function init2() {
-        const modelURL14 = URL14 + "model14.json";
-        const metadataURL14 = URL14 + "metadata14.json";
-        
-        model14 = await tmImage.load(modelURL14, metadataURL14);
-        maxPredictions14 = model14.getTotalClasses();
+            // the link to your model provided by Teachable Machine export panel
+            const URL1 = 'my_model_1/';
+            const URL2 = 'my_model_2/';
+            const URL3 = 'my_model_3/';
+            const URL4 = 'my_model_4/';
+            const URL5 = 'my_model_5/';
+            const URL6 = 'my_model_6/';
+            const URL7 = 'my_model_7/';
+            const URL8 = 'my_model_8/';
+            const URL9 = 'my_model_9/';
+            const URL10 = 'my_model_10/';
+            const URL11 = 'my_model_11/';
+            const URL12 = 'my_model_12/';
+            const URL13 = 'my_model_13/';
+            const URL14 = 'my_model_14/';
+            const URL15 = 'my_model_15/';
+            const URL16 = 'my_model_16/';
+            const URL17 = 'my_model_17/';
+            const URL18 = 'my_model_18/';
+            const URL19 = 'my_model_19/';
+            const URL20 = 'my_model_20/';
+            const URL21 = 'my_model_21/';
+            const URL22 = 'my_model_22/';
+            const URL23 = 'my_model_23/';
+            const URL24 = 'my_model_24/';
+            const URL25 = 'my_model_25/';
+            const URL26 = 'my_model_26/';
+            const URL27 = 'my_model_27/';
+            const URL28 = 'my_model_28/';
+            let model1, webcam, labelContainer, maxPredictions1;
+            let model2, maxPredictions2;
+            let model3, maxPredictions3;
+            let model4, maxPredictions4;
+            let model5, maxPredictions5;
+            let model6, maxPredictions6;
+            let model7, maxPredictions7;
+            let model8, maxPredictions8;
+            let model9, maxPredictions9;
+            let model10, maxPredictions10;
+            let model11, maxPredictions11;
+            let model12, maxPredictions12;
+            let model13, maxPredictions13;
+            let model14, maxPredictions14;
+            let model15, maxPredictions15;
+            let model16, maxPredictions16;
+            let model17, maxPredictions17;
+            let model18, maxPredictions18;
+            let model19, maxPredictions19;
+            let model20, maxPredictions20;
+            let model21, maxPredictions21;
+            let model22, maxPredictions22;
+            let model23, maxPredictions23;
+            let model24, maxPredictions24;
+            let model25, maxPredictions25;
+            let model26, maxPredictions26;
+            let model27, maxPredictions27;
+            let model28, maxPredictions28;
 
-        const flip = false;
-        webcam = new tmImage.Webcam(200, 200, flip);
-        await webcam.setup({ facingMode: "environment" });
-        await webcam.play();
-        window.requestAnimationFrame(loop2);
+            // Load the image model and setup the webcam
+            async function init1() {
+                const modelURL1 = URL1 + 'model1.json';
+                const metadataURL1 = URL1 + 'metadata1.json';
+                const modelURL2 = URL2 + 'model2.json';
+                const metadataURL2 = URL2 + 'metadata2.json';
+                const modelURL3 = URL3 + 'model3.json';
+                const metadataURL3 = URL3 + 'metadata3.json';
+                const modelURL4 = URL4 + 'model4.json';
+                const metadataURL4 = URL4 + 'metadata4.json';
+                const modelURL5 = URL5 + 'model5.json';
+                const metadataURL5 = URL5 + 'metadata5.json';
+                const modelURL6 = URL6 + 'model6.json';
+                const metadataURL6 = URL6 + 'metadata6.json';
+                const modelURL7 = URL7 + 'model7.json';
+                const metadataURL7 = URL7 + 'metadata7.json';
+                const modelURL8 = URL8 + 'model8.json';
+                const metadataURL8 = URL8 + 'metadata8.json';
+                const modelURL9 = URL9 + 'model9.json';
+                const metadataURL9 = URL9 + 'metadata9.json';
+                const modelURL10 = URL10 + 'model10.json';
+                const metadataURL10 = URL10 + 'metadata10.json';
+                const modelURL11 = URL11 + 'model11.json';
+                const metadataURL11 = URL11 + 'metadata11.json';
+                const modelURL12 = URL12 + 'model12.json';
+                const metadataURL12 = URL12 + 'metadata12.json';
+                const modelURL13 = URL13 + 'model13.json';
+                const metadataURL13 = URL13 + 'metadata13.json';
 
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions14; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-      }
+                // load the model and metadata
+                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+                // or files from your local hard drive
+                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+                model1 = await tmImage.load(modelURL1, metadataURL1);
+                model2 = await tmImage.load(modelURL2, metadataURL2);
+                model3 = await tmImage.load(modelURL3, metadataURL3);
+                model4 = await tmImage.load(modelURL4, metadataURL4);
+                model5 = await tmImage.load(modelURL5, metadataURL5);
+                model6 = await tmImage.load(modelURL6, metadataURL6);
+                model7 = await tmImage.load(modelURL7, metadataURL7);
+                model8 = await tmImage.load(modelURL8, metadataURL8);
+                model9 = await tmImage.load(modelURL9, metadataURL9);
+                model10 = await tmImage.load(modelURL10, metadataURL10);
+                model11 = await tmImage.load(modelURL11, metadataURL11);
+                model12 = await tmImage.load(modelURL12, metadataURL12);
+                model13 = await tmImage.load(modelURL13, metadataURL13);
+                maxPredictions1 = model1.getTotalClasses();
+                maxPredictions2 = model2.getTotalClasses();
+                maxPredictions3 = model3.getTotalClasses();
+                maxPredictions4 = model4.getTotalClasses();
+                maxPredictions5 = model5.getTotalClasses();
+                maxPredictions6 = model6.getTotalClasses();
+                maxPredictions7 = model7.getTotalClasses();
+                maxPredictions8 = model8.getTotalClasses();
+                maxPredictions9 = model9.getTotalClasses();
+                maxPredictions10 = model10.getTotalClasses();
+                maxPredictions11 = model11.getTotalClasses();
+                maxPredictions12 = model12.getTotalClasses();
+                maxPredictions13 = model13.getTotalClasses();
 
-      async function init3() {
-        const modelURL15 = URL15 + "model15.json";
-        const metadataURL15 = URL15 + "metadata15.json";
-        const modelURL16 = URL16 + "model16.json";
-        const metadataURL16 = URL16 + "metadata16.json";
-        const modelURL17 = URL17 + "model17.json";
-        const metadataURL17 = URL17 + "metadata17.json";
-        const modelURL18 = URL18 + "model18.json";
-        const metadataURL18 = URL18 + "metadata18.json";
-        
-        model15 = await tmImage.load(modelURL15, metadataURL15);
-        maxPredictions15 = model15.getTotalClasses();
-        model16 = await tmImage.load(modelURL16, metadataURL16);
-        maxPredictions16 = model16.getTotalClasses();
-        model17 = await tmImage.load(modelURL17, metadataURL17);
-        maxPredictions17 = model17.getTotalClasses();
-        model18 = await tmImage.load(modelURL18, metadataURL18);
-        maxPredictions18 = model18.getTotalClasses();
+                // Convenience function to setup a webcam
+                const flip = false; // whether to flip the webcam
+                webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+                await webcam.setup({ facingMode: 'environment' }); // request access to the webcam
+                await webcam.play();
+                window.requestAnimationFrame(loop1);
 
-        const flip = false;
-        webcam = new tmImage.Webcam(200, 200, flip);
-        await webcam.setup({ facingMode: "environment" });
-        await webcam.play();
-        window.requestAnimationFrame(loop3);
+                // append elements to the DOM
+                document.getElementById('webcam-container').appendChild(webcam.canvas);
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions1; i++) {
+                    // and class labels
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions2; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions3; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions4; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions5; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions6; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions7; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions8; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions9; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions10; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions11; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions12; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions13; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
 
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions15; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions16; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions17; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions18; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-      }
+            async function init2() {
+                const modelURL14 = URL14 + 'model14.json';
+                const metadataURL14 = URL14 + 'metadata14.json';
 
-      async function init4() {
-        const modelURL19 = URL19 + "model19.json";
-        const metadataURL19 = URL19 + "metadata19.json";
-        
-        model19 = await tmImage.load(modelURL19, metadataURL19);
-        maxPredictions19 = model19.getTotalClasses();
+                model14 = await tmImage.load(modelURL14, metadataURL14);
+                maxPredictions14 = model14.getTotalClasses();
 
-        const flip = false;
-        webcam = new tmImage.Webcam(200, 200, flip);
-        await webcam.setup({ facingMode: "environment" });
-        await webcam.play();
-        window.requestAnimationFrame(loop4);
+                const flip = false;
+                webcam = new tmImage.Webcam(200, 200, flip);
+                await webcam.setup({ facingMode: 'environment' });
+                await webcam.play();
+                window.requestAnimationFrame(loop2);
 
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions19; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-      }
+                document.getElementById('webcam-container').appendChild(webcam.canvas);
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions14; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
 
-      async function init5() {
-        const modelURL20 = URL20 + "model20.json";
-        const metadataURL20 = URL20 + "metadata20.json";
-        const modelURL21 = URL21 + "model21.json";
-        const metadataURL21 = URL21 + "metadata21.json";
-        const modelURL22 = URL22 + "model22.json";
-        const metadataURL22 = URL22 + "metadata22.json";
-        const modelURL23 = URL23 + "model23.json";
-        const metadataURL23 = URL23 + "metadata23.json";
-        const modelURL24 = URL24 + "model24.json";
-        const metadataURL24 = URL24 + "metadata24.json";
-        const modelURL25 = URL25 + "model25.json";
-        const metadataURL25 = URL25 + "metadata25.json";
-        const modelURL26 = URL26 + "model26.json";
-        const metadataURL26 = URL26 + "metadata26.json";
-        const modelURL27 = URL27 + "model27.json";
-        const metadataURL27 = URL27 + "metadata27.json";
-        const modelURL28 = URL28 + "model28.json";
-        const metadataURL28 = URL28 + "metadata28.json";
-        
-        model20 = await tmImage.load(modelURL20, metadataURL20);
-        maxPredictions20 = model20.getTotalClasses();
-        model21 = await tmImage.load(modelURL21, metadataURL21);
-        maxPredictions21 = model21.getTotalClasses();
-        model22 = await tmImage.load(modelURL22, metadataURL22);
-        maxPredictions22 = model22.getTotalClasses();
-        model23 = await tmImage.load(modelURL23, metadataURL23);
-        maxPredictions23 = model23.getTotalClasses();
-        model24 = await tmImage.load(modelURL24, metadataURL24);
-        maxPredictions24 = model24.getTotalClasses();
-        model25 = await tmImage.load(modelURL25, metadataURL25);
-        maxPredictions25 = model25.getTotalClasses();
-        model26 = await tmImage.load(modelURL26, metadataURL26);
-        maxPredictions26 = model26.getTotalClasses();
-        model27 = await tmImage.load(modelURL27, metadataURL27);
-        maxPredictions27 = model27.getTotalClasses();
-        model28 = await tmImage.load(modelURL28, metadataURL28);
-        maxPredictions28 = model28.getTotalClasses();
+            async function init3() {
+                const modelURL15 = URL15 + 'model15.json';
+                const metadataURL15 = URL15 + 'metadata15.json';
+                const modelURL16 = URL16 + 'model16.json';
+                const metadataURL16 = URL16 + 'metadata16.json';
+                const modelURL17 = URL17 + 'model17.json';
+                const metadataURL17 = URL17 + 'metadata17.json';
+                const modelURL18 = URL18 + 'model18.json';
+                const metadataURL18 = URL18 + 'metadata18.json';
 
-        const flip = false;
-        webcam = new tmImage.Webcam(200, 200, flip);
-        await webcam.setup({ facingMode: "environment" });
-        await webcam.play();
-        window.requestAnimationFrame(loop5);
+                model15 = await tmImage.load(modelURL15, metadataURL15);
+                maxPredictions15 = model15.getTotalClasses();
+                model16 = await tmImage.load(modelURL16, metadataURL16);
+                maxPredictions16 = model16.getTotalClasses();
+                model17 = await tmImage.load(modelURL17, metadataURL17);
+                maxPredictions17 = model17.getTotalClasses();
+                model18 = await tmImage.load(modelURL18, metadataURL18);
+                maxPredictions18 = model18.getTotalClasses();
 
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions20; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions21; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions22; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions23; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions24; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions25; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions26; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions27; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-        for (let i = 0; i < maxPredictions28; i++) {
-          labelContainer.appendChild(document.createElement("div"));
-        }
-      }
+                const flip = false;
+                webcam = new tmImage.Webcam(200, 200, flip);
+                await webcam.setup({ facingMode: 'environment' });
+                await webcam.play();
+                window.requestAnimationFrame(loop3);
 
-      async function loop1() {
-        webcam.update(); // update the webcam frame
-        await predict1();
-        window.requestAnimationFrame(loop1);
-      }
+                document.getElementById('webcam-container').appendChild(webcam.canvas);
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions15; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions16; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions17; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions18; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
 
-      async function loop2() {
-        webcam.update();
-        await predict2();
-        window.requestAnimationFrame(loop2);
-      }
+            async function init4() {
+                const modelURL19 = URL19 + 'model19.json';
+                const metadataURL19 = URL19 + 'metadata19.json';
 
-      async function loop3() {
-        webcam.update();
-        await predict3();
-        window.requestAnimationFrame(loop3);
-      }
+                model19 = await tmImage.load(modelURL19, metadataURL19);
+                maxPredictions19 = model19.getTotalClasses();
 
-      async function loop4() {
-        webcam.update();
-        await predict4();
-        window.requestAnimationFrame(loop4);
-      }
+                const flip = false;
+                webcam = new tmImage.Webcam(200, 200, flip);
+                await webcam.setup({ facingMode: 'environment' });
+                await webcam.play();
+                window.requestAnimationFrame(loop4);
 
-      async function loop5() {
-        webcam.update();
-        await predict5();
-        window.requestAnimationFrame(loop5);
-      }
+                document.getElementById('webcam-container').appendChild(webcam.canvas);
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions19; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
 
-      // run the webcam image through the image model
-      async function predict1() {
-        // predict can take in an image, video or canvas html element
-        const prediction1 = await model1.predict(webcam.canvas);
-        const prediction2 = await model2.predict(webcam.canvas);
-        const prediction3 = await model3.predict(webcam.canvas);
-        const prediction4 = await model4.predict(webcam.canvas);
-        const prediction5 = await model5.predict(webcam.canvas);
-        const prediction6 = await model6.predict(webcam.canvas);
-        const prediction7 = await model7.predict(webcam.canvas);
-        const prediction8 = await model8.predict(webcam.canvas);
-        const prediction9 = await model9.predict(webcam.canvas);
-        const prediction10 = await model10.predict(webcam.canvas);
-        const prediction11 = await model11.predict(webcam.canvas);
-        const prediction12 = await model12.predict(webcam.canvas);
-        const prediction13 = await model13.predict(webcam.canvas);
-        
-        for (let i = 0; i < prediction1.length; i++) {
-          console.log(prediction1[i]);
-          console.log(
-            prediction1[i].className,
-            jsonclassName1[i],
-            jsonahm1[i]
-          )
-          if (
-            prediction1[i].className == String(jsonclassName1[i]) &&
-            prediction1[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i] +
-              "/ capacity : " +
-              jsoncapacity[i] +
-              "/ error : " +
-              jsonerror[i]
-          }
-          console.log(prediction2[i]);
-          console.log(
-            prediction2[i].className,
-            jsonclassName1[i + 10],
-            jsonahm1[i + 10]
-          )
-          if (
-            prediction2[i].className == String(jsonclassName1[i + 10]) &&
-            prediction2[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 10] +
-              "/ capacity : " +
-              jsoncapacity[i + 10] +
-              "/ error : " +
-              jsonerror[i + 10]
-          }
-          console.log(prediction3[i]);
-          console.log(
-            prediction3[i].className,
-            jsonclassName1[i + 20],
-            jsonahm1[i + 20]
-          )
-          if (
-            prediction3[i].className == String(jsonclassName1[i + 20]) &&
-            prediction3[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 20] +
-              "/ capacity : " +
-              jsoncapacity[i + 20] +
-              "/ error : " +
-              jsonerror[i + 20]
-          }
-          console.log(prediction4[i]);
-          console.log(
-            prediction4[i].className,
-            jsonclassName1[i + 30],
-            jsonahm1[i + 30]
-          )
-          if (
-            prediction4[i].className == String(jsonclassName1[i + 30]) &&
-            prediction4[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 30] +
-              "/ capacity : " +
-              jsoncapacity[i + 30] +
-              "/ error : " +
-              jsonerror[i + 30]
-          }
-          console.log(prediction5[i]);
-          console.log(
-            prediction5[i].className,
-            jsonclassName1[i + 40],
-            jsonahm1[i + 40]
-          )
-          if (
-            prediction5[i].className == String(jsonclassName1[i + 40]) &&
-            prediction5[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 40] +
-              "/ capacity : " +
-              jsoncapacity[i + 40] +
-              "/ error : " +
-              jsonerror[i + 40]
-          }
-          console.log(prediction6[i]);
-          console.log(
-            prediction6[i].className,
-            jsonclassName1[i + 50],
-            jsonahm1[i + 50]
-          )
-          if (
-            prediction6[i].className == String(jsonclassName1[i + 50]) &&
-            prediction6[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 50] +
-              "/ capacity : " +
-              jsoncapacity[i + 50] +
-              "/ error : " +
-              jsonerror[i + 50]
-          }
-          console.log(prediction7[i]);
-          console.log(
-            prediction7[i].className,
-            jsonclassName1[i + 60],
-            jsonahm1[i + 60]
-          )
-          if (
-            prediction7[i].className == String(jsonclassName1[i + 60]) &&
-            prediction7[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 60] +
-              "/ capacity : " +
-              jsoncapacity[i + 60] +
-              "/ error : " +
-              jsonerror[i + 60]
-          }
-          console.log(prediction8[i]);
-          console.log(
-            prediction8[i].className,
-            jsonclassName1[i + 70],
-            jsonahm1[i + 70]
-          )
-          if (
-            prediction8[i].className == String(jsonclassName1[i + 70]) &&
-            prediction8[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 70] +
-              "/ capacity : " +
-              jsoncapacity[i + 70] +
-              "/ error : " +
-              jsonerror[i + 70]
-          }
-          console.log(prediction9[i]);
-          console.log(
-            prediction9[i].className,
-            jsonclassName1[i + 80],
-            jsonahm1[i + 80]
-          )
-          if (
-            prediction9[i].className == String(jsonclassName1[i + 80]) &&
-            prediction9[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 80] +
-              "/ capacity : " +
-              jsoncapacity[i + 80] +
-              "/ error : " +
-              jsonerror[i + 80]
-          }
-          console.log(prediction10[i]);
-          console.log(
-            prediction10[i].className,
-            jsonclassName1[i + 90],
-            jsonahm1[i + 90]
-          )
-          if (
-            prediction10[i].className == String(jsonclassName1[i + 90]) &&
-            prediction10[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 90] +
-              "/ capacity : " +
-              jsoncapacity[i + 90] +
-              "/ error : " +
-              jsonerror[i + 90]
-          }
-          console.log(prediction11[i]);
-          console.log(
-            prediction11[i].className,
-            jsonclassName1[i + 100],
-            jsonahm1[i + 100]
-          )
-          if (
-            prediction11[i].className == String(jsonclassName1[i + 100]) &&
-            prediction11[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 100] +
-              "/ capacity : " +
-              jsoncapacity[i + 100] +
-              "/ error : " +
-              jsonerror[i + 100]
-          }
-          console.log(prediction12[i]);
-          console.log(
-            prediction12[i].className,
-            jsonclassName1[i + 110],
-            jsonahm1[i + 110]
-          )
-          if (
-            prediction12[i].className == String(jsonclassName1[i + 110]) &&
-            prediction12[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 110] +
-              "/ capacity : " +
-              jsoncapacity[i + 110] +
-              "/ error : " +
-              jsonerror[i + 110]
-          }
-        }
+            async function init5() {
+                const modelURL20 = URL20 + 'model20.json';
+                const metadataURL20 = URL20 + 'metadata20.json';
+                const modelURL21 = URL21 + 'model21.json';
+                const metadataURL21 = URL21 + 'metadata21.json';
+                const modelURL22 = URL22 + 'model22.json';
+                const metadataURL22 = URL22 + 'metadata22.json';
+                const modelURL23 = URL23 + 'model23.json';
+                const metadataURL23 = URL23 + 'metadata23.json';
+                const modelURL24 = URL24 + 'model24.json';
+                const metadataURL24 = URL24 + 'metadata24.json';
+                const modelURL25 = URL25 + 'model25.json';
+                const metadataURL25 = URL25 + 'metadata25.json';
+                const modelURL26 = URL26 + 'model26.json';
+                const metadataURL26 = URL26 + 'metadata26.json';
+                const modelURL27 = URL27 + 'model27.json';
+                const metadataURL27 = URL27 + 'metadata27.json';
+                const modelURL28 = URL28 + 'model28.json';
+                const metadataURL28 = URL28 + 'metadata28.json';
 
-        for (let i = 0; i < prediction13.length; i++) {
-          console.log(prediction13[i]);
-          console.log(
-            prediction13[i].className,
-            jsonclassName1[i + 120],
-            jsonahm1[i + 120]
-          )
-          if (
-            prediction13[i].className == String(jsonclassName1[i + 120]) &&
-            prediction13[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm1[i + 120] +
-              "/ capacity : " +
-              jsoncapacity[i + 120] +
-              "/ error : " +
-              jsonerror[i + 120]
-          }
-        }
-      }
+                model20 = await tmImage.load(modelURL20, metadataURL20);
+                maxPredictions20 = model20.getTotalClasses();
+                model21 = await tmImage.load(modelURL21, metadataURL21);
+                maxPredictions21 = model21.getTotalClasses();
+                model22 = await tmImage.load(modelURL22, metadataURL22);
+                maxPredictions22 = model22.getTotalClasses();
+                model23 = await tmImage.load(modelURL23, metadataURL23);
+                maxPredictions23 = model23.getTotalClasses();
+                model24 = await tmImage.load(modelURL24, metadataURL24);
+                maxPredictions24 = model24.getTotalClasses();
+                model25 = await tmImage.load(modelURL25, metadataURL25);
+                maxPredictions25 = model25.getTotalClasses();
+                model26 = await tmImage.load(modelURL26, metadataURL26);
+                maxPredictions26 = model26.getTotalClasses();
+                model27 = await tmImage.load(modelURL27, metadataURL27);
+                maxPredictions27 = model27.getTotalClasses();
+                model28 = await tmImage.load(modelURL28, metadataURL28);
+                maxPredictions28 = model28.getTotalClasses();
 
-      async function predict2() {
-        const prediction14 = await model14.predict(webcam.canvas);
-        
-        for (let i = 0; i < prediction14.length; i++) {
-          console.log(prediction14[i]);
-          console.log(
-            prediction14[i].className,
-            jsonclassName2[i],
-            jsonahm2[i]
-          )
-          if (
-            prediction14[i].className == String(jsonclassName2[i]) &&
-            prediction14[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ahm : " +
-              jsonahm2[i]
-          }
-        }
-      }
+                const flip = false;
+                webcam = new tmImage.Webcam(200, 200, flip);
+                await webcam.setup({ facingMode: 'environment' });
+                await webcam.play();
+                window.requestAnimationFrame(loop5);
 
-      async function predict3() {
-        const prediction15 = await model15.predict(webcam.canvas);
-        const prediction16 = await model16.predict(webcam.canvas);
-        const prediction17 = await model17.predict(webcam.canvas);
-        const prediction18 = await model18.predict(webcam.canvas);
-        
-        for (let i = 0; i < prediction15.length; i++) {
-          console.log(prediction15[i]);
-          console.log(
-            prediction15[i].className,
-            jsonclassName3[i],
-            jsonfarad[i]
-          )
-          if (
-            prediction15[i].className == String(jsonclassName3[i]) &&
-            prediction15[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> farad : " +
-              jsonfarad[i] +
-              "/ type : " +
-              jsontype1[i] +
-              "/ pressure : " +
-              jsonpressure[i]
-          }
-          console.log(prediction16[i]);
-          console.log(
-            prediction16[i].className,
-            jsonclassName3[i + 10],
-            jsonfarad[i + 10]
-          )
-          if (
-            prediction16[i].className == String(jsonclassName3[i + 10]) &&
-            prediction16[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> farad : " +
-              jsonfarad[i + 10] +
-              "/ type : " +
-              jsontype1[i + 10] +
-              "/ pressure : " +
-              jsonpressure[i + 10]
-          }
-          console.log(prediction17[i]);
-          console.log(
-            prediction17[i].className,
-            jsonclassName3[i + 20],
-            jsonfarad[i + 20]
-          )
-          if (
-            prediction17[i].className == String(jsonclassName3[i + 20]) &&
-            prediction17[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> farad : " +
-              jsonfarad[i + 20] +
-              "/ type : " +
-              jsontype1[i + 20] +
-              "/ pressure : " +
-              jsonpressure[i + 20]
-          }
-        }
+                document.getElementById('webcam-container').appendChild(webcam.canvas);
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions20; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions21; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions22; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions23; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions24; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions25; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions26; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions27; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+                for (let i = 0; i < maxPredictions28; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
 
-        for (let i = 0; i < prediction18.length; i++) {
-          console.log(prediction18[i]);
-          console.log(
-            prediction18[i].className,
-            jsonclassName3[i + 30],
-            jsonfarad[i + 30]
-          )
-          if (
-            prediction18[i].className == String(jsonclassName3[i + 30]) &&
-            prediction18[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> farad : " +
-              jsonfarad[i + 30] +
-              "/ type : " +
-              jsontype1[i + 30] + 
-              "/ pressure : " +
-              jsonpressure[i + 30]
-          }
-        }
-      }
+            async function loop1() {
+                webcam.update(); // update the webcam frame
+                await predict1();
+                window.requestAnimationFrame(loop1);
+            }
 
-      async function predict4() {
-        const prediction19 = await model19.predict(webcam.canvas);
-        
-        for (let i = 0; i < prediction19.length; i++) {
-          console.log(prediction19[i]);
-          console.log(
-            prediction19[i].className,
-            jsonclassName4[i],
-            jsonhenry[i]
-          )
-          if (
-            prediction19[i].className == String(jsonclassName4[i]) &&
-            prediction19[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> henry : " +
-              jsonhenry[i]
-          }
-        }
-      }
+            async function loop2() {
+                webcam.update();
+                await predict2();
+                window.requestAnimationFrame(loop2);
+            }
 
-      async function predict5() {
-        const prediction20 = await model20.predict(webcam.canvas);
-        const prediction21 = await model21.predict(webcam.canvas);
-        const prediction22 = await model22.predict(webcam.canvas);
-        const prediction23 = await model23.predict(webcam.canvas);
-        const prediction24 = await model24.predict(webcam.canvas);
-        const prediction25 = await model25.predict(webcam.canvas);
-        const prediction26 = await model26.predict(webcam.canvas);
-        const prediction27 = await model27.predict(webcam.canvas);
-        const prediction28 = await model28.predict(webcam.canvas);
-        
-        for (let i = 0; i < prediction20.length; i++) {
-          console.log(prediction20[i]);
-          console.log(
-            prediction20[i].className,
-            jsonclassName5[i],
-            jsonic[i]
-          )
-          if (
-            prediction20[i].className == String(jsonclassName5[i]) &&
-            prediction20[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i] +
-              "/ type : " +
-              jsontype2[i] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i] + ">"
-          }
-          console.log(prediction21[i]);
-          console.log(
-            prediction21[i].className,
-            jsonclassName5[i + 10],
-            jsonic[i + 10]
-          )
-          if (
-            prediction21[i].className == String(jsonclassName5[i + 10]) &&
-            prediction21[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 10] +
-              "/ type : " +
-              jsontype2[i + 10] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 10] + ">"
-          }
-          console.log(prediction22[i]);
-          console.log(
-            prediction22[i].className,
-            jsonclassName5[i + 20],
-            jsonic[i + 20]
-          )
-          if (
-            prediction22[i].className == String(jsonclassName5[i + 20]) &&
-            prediction22[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 20] +
-              "/ type : " +
-              jsontype2[i + 20] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 20] + ">"
-          }
-          console.log(prediction23[i]);
-          console.log(
-            prediction23[i].className,
-            jsonclassName5[i + 30],
-            jsonic[i + 30]
-          )
-          if (
-            prediction23[i].className == String(jsonclassName5[i + 30]) &&
-            prediction23[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 30] +
-              "/ type : " +
-              jsontype2[i + 30] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 30] + ">"
-          }
-          console.log(prediction24[i]);
-          console.log(
-            prediction24[i].className,
-            jsonclassName5[i + 40],
-            jsonic[i + 40]
-          )
-          if (
-            prediction24[i].className == String(jsonclassName5[i + 40]) &&
-            prediction24[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 40] +
-              "/ type : " +
-              jsontype2[i + 40] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 40] + ">"
-          }
-          console.log(prediction25[i]);
-          console.log(
-            prediction25[i].className,
-            jsonclassName5[i + 50],
-            jsonic[i + 50]
-          )
-          if (
-            prediction25[i].className == String(jsonclassName5[i + 50]) &&
-            prediction25[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 50] +
-              "/ type : " +
-              jsontype2[i + 50] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 50] + ">"
-          }
-          console.log(prediction26[i]);
-          console.log(
-            prediction26[i].className,
-            jsonclassName5[i + 60],
-            jsonic[i + 60]
-          )
-          if (
-            prediction26[i].className == String(jsonclassName5[i + 60]) &&
-            prediction26[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 60] +
-              "/ type : " +
-              jsontype2[i + 60] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 60] + ">"
-          }
-          console.log(prediction27[i]);
-          console.log(
-            prediction27[i].className,
-            jsonclassName5[i + 70],
-            jsonic[i + 70]
-          )
-          if (
-            prediction27[i].className == String(jsonclassName5[i + 70]) &&
-            prediction27[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 70] +
-              "/ type : " +
-              jsontype2[i + 70] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 70] + ">"
-          }
-        }
+            async function loop3() {
+                webcam.update();
+                await predict3();
+                window.requestAnimationFrame(loop3);
+            }
 
-        for (let i = 0; i < prediction28.length; i++) {
-          console.log(prediction28[i]);
-          console.log(
-            prediction28[i].className,
-            jsonclassName5[i + 80],
-            jsonic[i + 80]
-          )
-          if (
-            prediction28[i].className == String(jsonclassName5[i + 80]) &&
-            prediction28[i].probability.toFixed(2) >= 0.9
-          ) {
-            labelContainer.childNodes[0].innerHTML =
-              "<br> ic : " +
-              jsonic[i + 80] +
-              "/ type : " +
-              jsontype2[i + 80] +
-              "<br><br> pin : " +
-              "<img style='width:200px; height:200px;' src=" + jsonpin[i + 80] + ">"
-          }
-        }
-      }
-    </script>
-  </body>
+            async function loop4() {
+                webcam.update();
+                await predict4();
+                window.requestAnimationFrame(loop4);
+            }
+
+            async function loop5() {
+                webcam.update();
+                await predict5();
+                window.requestAnimationFrame(loop5);
+            }
+
+            // run the webcam image through the image model
+            async function predict1() {
+                // predict can take in an image, video or canvas html element
+                const prediction1 = await model1.predict(webcam.canvas);
+                const prediction2 = await model2.predict(webcam.canvas);
+                const prediction3 = await model3.predict(webcam.canvas);
+                const prediction4 = await model4.predict(webcam.canvas);
+                const prediction5 = await model5.predict(webcam.canvas);
+                const prediction6 = await model6.predict(webcam.canvas);
+                const prediction7 = await model7.predict(webcam.canvas);
+                const prediction8 = await model8.predict(webcam.canvas);
+                const prediction9 = await model9.predict(webcam.canvas);
+                const prediction10 = await model10.predict(webcam.canvas);
+                const prediction11 = await model11.predict(webcam.canvas);
+                const prediction12 = await model12.predict(webcam.canvas);
+                const prediction13 = await model13.predict(webcam.canvas);
+
+                for (let i = 0; i < prediction1.length; i++) {
+                    console.log(prediction1[i]);
+                    console.log(prediction1[i].className, jsonclassName1[i], jsonahm1[i]);
+                    if (
+                        prediction1[i].className == String(jsonclassName1[i]) &&
+                        prediction1[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i] +
+                            '/ capacity : ' +
+                            jsoncapacity[i] +
+                            '/ error : ' +
+                            jsonerror[i];
+                    }
+                    console.log(prediction2[i]);
+                    console.log(prediction2[i].className, jsonclassName1[i + 10], jsonahm1[i + 10]);
+                    if (
+                        prediction2[i].className == String(jsonclassName1[i + 10]) &&
+                        prediction2[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 10] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 10] +
+                            '/ error : ' +
+                            jsonerror[i + 10];
+                    }
+                    console.log(prediction3[i]);
+                    console.log(prediction3[i].className, jsonclassName1[i + 20], jsonahm1[i + 20]);
+                    if (
+                        prediction3[i].className == String(jsonclassName1[i + 20]) &&
+                        prediction3[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 20] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 20] +
+                            '/ error : ' +
+                            jsonerror[i + 20];
+                    }
+                    console.log(prediction4[i]);
+                    console.log(prediction4[i].className, jsonclassName1[i + 30], jsonahm1[i + 30]);
+                    if (
+                        prediction4[i].className == String(jsonclassName1[i + 30]) &&
+                        prediction4[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 30] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 30] +
+                            '/ error : ' +
+                            jsonerror[i + 30];
+                    }
+                    console.log(prediction5[i]);
+                    console.log(prediction5[i].className, jsonclassName1[i + 40], jsonahm1[i + 40]);
+                    if (
+                        prediction5[i].className == String(jsonclassName1[i + 40]) &&
+                        prediction5[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 40] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 40] +
+                            '/ error : ' +
+                            jsonerror[i + 40];
+                    }
+                    console.log(prediction6[i]);
+                    console.log(prediction6[i].className, jsonclassName1[i + 50], jsonahm1[i + 50]);
+                    if (
+                        prediction6[i].className == String(jsonclassName1[i + 50]) &&
+                        prediction6[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 50] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 50] +
+                            '/ error : ' +
+                            jsonerror[i + 50];
+                    }
+                    console.log(prediction7[i]);
+                    console.log(prediction7[i].className, jsonclassName1[i + 60], jsonahm1[i + 60]);
+                    if (
+                        prediction7[i].className == String(jsonclassName1[i + 60]) &&
+                        prediction7[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 60] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 60] +
+                            '/ error : ' +
+                            jsonerror[i + 60];
+                    }
+                    console.log(prediction8[i]);
+                    console.log(prediction8[i].className, jsonclassName1[i + 70], jsonahm1[i + 70]);
+                    if (
+                        prediction8[i].className == String(jsonclassName1[i + 70]) &&
+                        prediction8[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 70] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 70] +
+                            '/ error : ' +
+                            jsonerror[i + 70];
+                    }
+                    console.log(prediction9[i]);
+                    console.log(prediction9[i].className, jsonclassName1[i + 80], jsonahm1[i + 80]);
+                    if (
+                        prediction9[i].className == String(jsonclassName1[i + 80]) &&
+                        prediction9[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 80] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 80] +
+                            '/ error : ' +
+                            jsonerror[i + 80];
+                    }
+                    console.log(prediction10[i]);
+                    console.log(
+                        prediction10[i].className,
+                        jsonclassName1[i + 90],
+                        jsonahm1[i + 90]
+                    );
+                    if (
+                        prediction10[i].className == String(jsonclassName1[i + 90]) &&
+                        prediction10[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 90] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 90] +
+                            '/ error : ' +
+                            jsonerror[i + 90];
+                    }
+                    console.log(prediction11[i]);
+                    console.log(
+                        prediction11[i].className,
+                        jsonclassName1[i + 100],
+                        jsonahm1[i + 100]
+                    );
+                    if (
+                        prediction11[i].className == String(jsonclassName1[i + 100]) &&
+                        prediction11[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 100] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 100] +
+                            '/ error : ' +
+                            jsonerror[i + 100];
+                    }
+                    console.log(prediction12[i]);
+                    console.log(
+                        prediction12[i].className,
+                        jsonclassName1[i + 110],
+                        jsonahm1[i + 110]
+                    );
+                    if (
+                        prediction12[i].className == String(jsonclassName1[i + 110]) &&
+                        prediction12[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 110] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 110] +
+                            '/ error : ' +
+                            jsonerror[i + 110];
+                    }
+                }
+
+                for (let i = 0; i < prediction13.length; i++) {
+                    console.log(prediction13[i]);
+                    console.log(
+                        prediction13[i].className,
+                        jsonclassName1[i + 120],
+                        jsonahm1[i + 120]
+                    );
+                    if (
+                        prediction13[i].className == String(jsonclassName1[i + 120]) &&
+                        prediction13[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ahm : ' +
+                            jsonahm1[i + 120] +
+                            '/ capacity : ' +
+                            jsoncapacity[i + 120] +
+                            '/ error : ' +
+                            jsonerror[i + 120];
+                    }
+                }
+            }
+
+            async function predict2() {
+                const prediction14 = await model14.predict(webcam.canvas);
+
+                for (let i = 0; i < prediction14.length; i++) {
+                    console.log(prediction14[i]);
+                    console.log(prediction14[i].className, jsonclassName2[i], jsonahm2[i]);
+                    if (
+                        prediction14[i].className == String(jsonclassName2[i]) &&
+                        prediction14[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML = '<br> ahm : ' + jsonahm2[i];
+                    }
+                }
+            }
+
+            async function predict3() {
+                const prediction15 = await model15.predict(webcam.canvas);
+                const prediction16 = await model16.predict(webcam.canvas);
+                const prediction17 = await model17.predict(webcam.canvas);
+                const prediction18 = await model18.predict(webcam.canvas);
+
+                for (let i = 0; i < prediction15.length; i++) {
+                    console.log(prediction15[i]);
+                    console.log(prediction15[i].className, jsonclassName3[i], jsonfarad[i]);
+                    if (
+                        prediction15[i].className == String(jsonclassName3[i]) &&
+                        prediction15[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> farad : ' +
+                            jsonfarad[i] +
+                            '/ type : ' +
+                            jsontype1[i] +
+                            '/ pressure : ' +
+                            jsonpressure[i];
+                    }
+                    console.log(prediction16[i]);
+                    console.log(
+                        prediction16[i].className,
+                        jsonclassName3[i + 10],
+                        jsonfarad[i + 10]
+                    );
+                    if (
+                        prediction16[i].className == String(jsonclassName3[i + 10]) &&
+                        prediction16[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> farad : ' +
+                            jsonfarad[i + 10] +
+                            '/ type : ' +
+                            jsontype1[i + 10] +
+                            '/ pressure : ' +
+                            jsonpressure[i + 10];
+                    }
+                    console.log(prediction17[i]);
+                    console.log(
+                        prediction17[i].className,
+                        jsonclassName3[i + 20],
+                        jsonfarad[i + 20]
+                    );
+                    if (
+                        prediction17[i].className == String(jsonclassName3[i + 20]) &&
+                        prediction17[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> farad : ' +
+                            jsonfarad[i + 20] +
+                            '/ type : ' +
+                            jsontype1[i + 20] +
+                            '/ pressure : ' +
+                            jsonpressure[i + 20];
+                    }
+                }
+
+                for (let i = 0; i < prediction18.length; i++) {
+                    console.log(prediction18[i]);
+                    console.log(
+                        prediction18[i].className,
+                        jsonclassName3[i + 30],
+                        jsonfarad[i + 30]
+                    );
+                    if (
+                        prediction18[i].className == String(jsonclassName3[i + 30]) &&
+                        prediction18[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> farad : ' +
+                            jsonfarad[i + 30] +
+                            '/ type : ' +
+                            jsontype1[i + 30] +
+                            '/ pressure : ' +
+                            jsonpressure[i + 30];
+                    }
+                }
+            }
+
+            async function predict4() {
+                const prediction19 = await model19.predict(webcam.canvas);
+
+                for (let i = 0; i < prediction19.length; i++) {
+                    console.log(prediction19[i]);
+                    console.log(prediction19[i].className, jsonclassName4[i], jsonhenry[i]);
+                    if (
+                        prediction19[i].className == String(jsonclassName4[i]) &&
+                        prediction19[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML = '<br> henry : ' + jsonhenry[i];
+                    }
+                }
+            }
+
+            async function predict5() {
+                const prediction20 = await model20.predict(webcam.canvas);
+                const prediction21 = await model21.predict(webcam.canvas);
+                const prediction22 = await model22.predict(webcam.canvas);
+                const prediction23 = await model23.predict(webcam.canvas);
+                const prediction24 = await model24.predict(webcam.canvas);
+                const prediction25 = await model25.predict(webcam.canvas);
+                const prediction26 = await model26.predict(webcam.canvas);
+                const prediction27 = await model27.predict(webcam.canvas);
+                const prediction28 = await model28.predict(webcam.canvas);
+
+                for (let i = 0; i < prediction20.length; i++) {
+                    console.log(prediction20[i]);
+                    console.log(prediction20[i].className, jsonclassName5[i], jsonic[i]);
+                    if (
+                        prediction20[i].className == String(jsonclassName5[i]) &&
+                        prediction20[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i] +
+                            '/ type : ' +
+                            jsontype2[i] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i] +
+                            '>';
+                    }
+                    console.log(prediction21[i]);
+                    console.log(prediction21[i].className, jsonclassName5[i + 10], jsonic[i + 10]);
+                    if (
+                        prediction21[i].className == String(jsonclassName5[i + 10]) &&
+                        prediction21[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 10] +
+                            '/ type : ' +
+                            jsontype2[i + 10] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 10] +
+                            '>';
+                    }
+                    console.log(prediction22[i]);
+                    console.log(prediction22[i].className, jsonclassName5[i + 20], jsonic[i + 20]);
+                    if (
+                        prediction22[i].className == String(jsonclassName5[i + 20]) &&
+                        prediction22[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 20] +
+                            '/ type : ' +
+                            jsontype2[i + 20] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 20] +
+                            '>';
+                    }
+                    console.log(prediction23[i]);
+                    console.log(prediction23[i].className, jsonclassName5[i + 30], jsonic[i + 30]);
+                    if (
+                        prediction23[i].className == String(jsonclassName5[i + 30]) &&
+                        prediction23[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 30] +
+                            '/ type : ' +
+                            jsontype2[i + 30] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 30] +
+                            '>';
+                    }
+                    console.log(prediction24[i]);
+                    console.log(prediction24[i].className, jsonclassName5[i + 40], jsonic[i + 40]);
+                    if (
+                        prediction24[i].className == String(jsonclassName5[i + 40]) &&
+                        prediction24[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 40] +
+                            '/ type : ' +
+                            jsontype2[i + 40] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 40] +
+                            '>';
+                    }
+                    console.log(prediction25[i]);
+                    console.log(prediction25[i].className, jsonclassName5[i + 50], jsonic[i + 50]);
+                    if (
+                        prediction25[i].className == String(jsonclassName5[i + 50]) &&
+                        prediction25[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 50] +
+                            '/ type : ' +
+                            jsontype2[i + 50] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 50] +
+                            '>';
+                    }
+                    console.log(prediction26[i]);
+                    console.log(prediction26[i].className, jsonclassName5[i + 60], jsonic[i + 60]);
+                    if (
+                        prediction26[i].className == String(jsonclassName5[i + 60]) &&
+                        prediction26[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 60] +
+                            '/ type : ' +
+                            jsontype2[i + 60] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 60] +
+                            '>';
+                    }
+                    console.log(prediction27[i]);
+                    console.log(prediction27[i].className, jsonclassName5[i + 70], jsonic[i + 70]);
+                    if (
+                        prediction27[i].className == String(jsonclassName5[i + 70]) &&
+                        prediction27[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 70] +
+                            '/ type : ' +
+                            jsontype2[i + 70] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 70] +
+                            '>';
+                    }
+                }
+
+                for (let i = 0; i < prediction28.length; i++) {
+                    console.log(prediction28[i]);
+                    console.log(prediction28[i].className, jsonclassName5[i + 80], jsonic[i + 80]);
+                    if (
+                        prediction28[i].className == String(jsonclassName5[i + 80]) &&
+                        prediction28[i].probability.toFixed(2) >= 0.9
+                    ) {
+                        labelContainer.childNodes[0].innerHTML =
+                            '<br> ic : ' +
+                            jsonic[i + 80] +
+                            '/ type : ' +
+                            jsontype2[i + 80] +
+                            '<br><br> pin : ' +
+                            "<img style='width:200px; height:200px;' src=" +
+                            jsonpin[i + 80] +
+                            '>';
+                    }
+                }
+            }
+        </script>
+    </body>
 </html>
